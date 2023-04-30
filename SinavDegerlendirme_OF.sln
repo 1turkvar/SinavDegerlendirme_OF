@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinavDegerlendirme_OF", "SinavDegerlendirme_OF\SinavDegerlendirme_OF.csproj", "{666A86B8-57C0-4C9E-91D5-DC54DA386662}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TulparUI", "TulparUI\TulparUI.csproj", "{931E964A-03EE-4BFD-8422-A7640223DCDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{2765AC55-FAEF-4249-9E3B-72037C093F4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{666A86B8-57C0-4C9E-91D5-DC54DA386662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{666A86B8-57C0-4C9E-91D5-DC54DA386662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{666A86B8-57C0-4C9E-91D5-DC54DA386662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{666A86B8-57C0-4C9E-91D5-DC54DA386662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{931E964A-03EE-4BFD-8422-A7640223DCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{931E964A-03EE-4BFD-8422-A7640223DCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{931E964A-03EE-4BFD-8422-A7640223DCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{931E964A-03EE-4BFD-8422-A7640223DCDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{931E964A-03EE-4BFD-8422-A7640223DCDC} = {2765AC55-FAEF-4249-9E3B-72037C093F4B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE4AB539-2384-4EC2-B8A5-62C88326B7ED}
+	EndGlobalSection
+EndGlobal
