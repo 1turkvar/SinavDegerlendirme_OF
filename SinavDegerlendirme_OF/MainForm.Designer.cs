@@ -65,6 +65,11 @@
             this.lWorkS = new TulparUI.Controls.TulparLabel();
             this.lAyrac = new TulparUI.Controls.TulparLabel();
             this.lTopWorkS = new TulparUI.Controls.TulparLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tSoruSayisi = new TulparUI.Controls.TulparTextBox();
+            this.tSoruPuan = new TulparUI.Controls.TulparTextBox();
+            this.bSettings = new TulparUI.Controls.TulparButton();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bDegerlendir
@@ -75,12 +80,12 @@
             this.bDegerlendir.Depth = 0;
             this.bDegerlendir.HighEmphasis = true;
             this.bDegerlendir.Icon = null;
-            this.bDegerlendir.Location = new System.Drawing.Point(14, 206);
-            this.bDegerlendir.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.bDegerlendir.Location = new System.Drawing.Point(9, 134);
+            this.bDegerlendir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bDegerlendir.MouseState = TulparUI.MouseState.HOVER;
             this.bDegerlendir.Name = "bDegerlendir";
             this.bDegerlendir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.bDegerlendir.Size = new System.Drawing.Size(374, 49);
+            this.bDegerlendir.Size = new System.Drawing.Size(249, 32);
             this.bDegerlendir.TabIndex = 0;
             this.bDegerlendir.Text = "Sınav Değerlendir";
             this.bDegerlendir.Type = TulparUI.Controls.TulparButton.TulparButtonType.Contained;
@@ -96,13 +101,12 @@
             this.tCevapAnahtari.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tCevapAnahtari.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tCevapAnahtari.Depth = 0;
-            this.tCevapAnahtari.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tCevapAnahtari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tCevapAnahtari.HelperText = "Cevap Anahtarını Giriniz!";
             this.tCevapAnahtari.HideSelection = false;
             this.tCevapAnahtari.Hint = "Cevap Anahtarı";
             this.tCevapAnahtari.LeadingIcon = null;
-            this.tCevapAnahtari.Location = new System.Drawing.Point(13, 103);
-            this.tCevapAnahtari.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tCevapAnahtari.Location = new System.Drawing.Point(9, 67);
             this.tCevapAnahtari.MaxLength = 20;
             this.tCevapAnahtari.MouseState = TulparUI.MouseState.OUT;
             this.tCevapAnahtari.Name = "tCevapAnahtari";
@@ -113,8 +117,8 @@
             this.tCevapAnahtari.SelectedText = "";
             this.tCevapAnahtari.SelectionLength = 0;
             this.tCevapAnahtari.SelectionStart = 0;
-            this.tCevapAnahtari.ShortcutsEnabled = false;
-            this.tCevapAnahtari.Size = new System.Drawing.Size(375, 48);
+            this.tCevapAnahtari.ShortcutsEnabled = true;
+            this.tCevapAnahtari.Size = new System.Drawing.Size(250, 48);
             this.tCevapAnahtari.TabIndex = 1;
             this.tCevapAnahtari.TabStop = false;
             this.tCevapAnahtari.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -131,10 +135,9 @@
             this.LogList.FullRowSelect = true;
             this.LogList.GridLines = true;
             this.LogList.HideSelection = false;
-            this.LogList.Location = new System.Drawing.Point(4, 871);
-            this.LogList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LogList.Location = new System.Drawing.Point(3, 548);
             this.LogList.Name = "LogList";
-            this.LogList.Size = new System.Drawing.Size(2130, 250);
+            this.LogList.Size = new System.Drawing.Size(1419, 164);
             this.LogList.TabIndex = 2;
             this.LogList.UseCompatibleStateImageBehavior = false;
             this.LogList.View = System.Windows.Forms.View.Details;
@@ -233,14 +236,13 @@
             this.cYanlisS,
             this.cBosS,
             this.cSinavPuan});
-            this.ListSinav.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ListSinav.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListSinav.FullRowSelect = true;
             this.ListSinav.GridLines = true;
             this.ListSinav.HideSelection = false;
-            this.ListSinav.Location = new System.Drawing.Point(398, 98);
-            this.ListSinav.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ListSinav.Location = new System.Drawing.Point(0, 0);
             this.ListSinav.Name = "ListSinav";
-            this.ListSinav.Size = new System.Drawing.Size(1736, 773);
+            this.ListSinav.Size = new System.Drawing.Size(1143, 484);
             this.ListSinav.TabIndex = 3;
             this.ListSinav.UseCompatibleStateImageBehavior = false;
             this.ListSinav.View = System.Windows.Forms.View.Details;
@@ -310,12 +312,12 @@
             this.bExportExcel.Depth = 0;
             this.bExportExcel.HighEmphasis = true;
             this.bExportExcel.Icon = null;
-            this.bExportExcel.Location = new System.Drawing.Point(14, 273);
-            this.bExportExcel.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.bExportExcel.Location = new System.Drawing.Point(9, 177);
+            this.bExportExcel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bExportExcel.MouseState = TulparUI.MouseState.HOVER;
             this.bExportExcel.Name = "bExportExcel";
             this.bExportExcel.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.bExportExcel.Size = new System.Drawing.Size(374, 49);
+            this.bExportExcel.Size = new System.Drawing.Size(249, 32);
             this.bExportExcel.TabIndex = 4;
             this.bExportExcel.Text = "Excel Olarak Kaydet";
             this.bExportExcel.Type = TulparUI.Controls.TulparButton.TulparButtonType.Outlined;
@@ -328,8 +330,7 @@
             this.lWorkS.AutoSize = true;
             this.lWorkS.Depth = 0;
             this.lWorkS.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lWorkS.Location = new System.Drawing.Point(105, 812);
-            this.lWorkS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lWorkS.Location = new System.Drawing.Point(70, 528);
             this.lWorkS.MouseState = TulparUI.MouseState.HOVER;
             this.lWorkS.Name = "lWorkS";
             this.lWorkS.Size = new System.Drawing.Size(37, 19);
@@ -341,8 +342,7 @@
             this.lAyrac.AutoSize = true;
             this.lAyrac.Depth = 0;
             this.lAyrac.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lAyrac.Location = new System.Drawing.Point(170, 812);
-            this.lAyrac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lAyrac.Location = new System.Drawing.Point(113, 528);
             this.lAyrac.MouseState = TulparUI.MouseState.HOVER;
             this.lAyrac.Name = "lAyrac";
             this.lAyrac.Size = new System.Drawing.Size(8, 19);
@@ -354,35 +354,130 @@
             this.lTopWorkS.AutoSize = true;
             this.lTopWorkS.Depth = 0;
             this.lTopWorkS.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lTopWorkS.Location = new System.Drawing.Point(190, 812);
-            this.lTopWorkS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTopWorkS.Location = new System.Drawing.Point(127, 528);
             this.lTopWorkS.MouseState = TulparUI.MouseState.HOVER;
             this.lTopWorkS.Name = "lTopWorkS";
             this.lTopWorkS.Size = new System.Drawing.Size(37, 19);
             this.lTopWorkS.TabIndex = 7;
             this.lTopWorkS.Text = "0000";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ListSinav);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(279, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1143, 484);
+            this.panel1.TabIndex = 8;
+            // 
+            // tSoruSayisi
+            // 
+            this.tSoruSayisi.AnimateReadOnly = false;
+            this.tSoruSayisi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tSoruSayisi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tSoruSayisi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tSoruSayisi.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tSoruSayisi.Depth = 0;
+            this.tSoruSayisi.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tSoruSayisi.HideSelection = true;
+            this.tSoruSayisi.Hint = "Soru Sayısı";
+            this.tSoruSayisi.LeadingIcon = null;
+            this.tSoruSayisi.Location = new System.Drawing.Point(6, 249);
+            this.tSoruSayisi.MaxLength = 32767;
+            this.tSoruSayisi.MouseState = TulparUI.MouseState.OUT;
+            this.tSoruSayisi.Name = "tSoruSayisi";
+            this.tSoruSayisi.PasswordChar = '\0';
+            this.tSoruSayisi.PrefixSuffixText = null;
+            this.tSoruSayisi.ReadOnly = false;
+            this.tSoruSayisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tSoruSayisi.SelectedText = "";
+            this.tSoruSayisi.SelectionLength = 0;
+            this.tSoruSayisi.SelectionStart = 0;
+            this.tSoruSayisi.ShortcutsEnabled = true;
+            this.tSoruSayisi.Size = new System.Drawing.Size(98, 48);
+            this.tSoruSayisi.TabIndex = 9;
+            this.tSoruSayisi.TabStop = false;
+            this.tSoruSayisi.Text = "20";
+            this.tSoruSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tSoruSayisi.TrailingIcon = null;
+            this.tSoruSayisi.UseSystemPasswordChar = false;
+            // 
+            // tSoruPuan
+            // 
+            this.tSoruPuan.AnimateReadOnly = false;
+            this.tSoruPuan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tSoruPuan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tSoruPuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tSoruPuan.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tSoruPuan.Depth = 0;
+            this.tSoruPuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tSoruPuan.HideSelection = true;
+            this.tSoruPuan.Hint = "Bir Soru Karşılığı Puan";
+            this.tSoruPuan.LeadingIcon = null;
+            this.tSoruPuan.Location = new System.Drawing.Point(110, 249);
+            this.tSoruPuan.MaxLength = 32767;
+            this.tSoruPuan.MouseState = TulparUI.MouseState.OUT;
+            this.tSoruPuan.Name = "tSoruPuan";
+            this.tSoruPuan.PasswordChar = '\0';
+            this.tSoruPuan.PrefixSuffixText = null;
+            this.tSoruPuan.ReadOnly = false;
+            this.tSoruPuan.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tSoruPuan.SelectedText = "";
+            this.tSoruPuan.SelectionLength = 0;
+            this.tSoruPuan.SelectionStart = 0;
+            this.tSoruPuan.ShortcutsEnabled = true;
+            this.tSoruPuan.Size = new System.Drawing.Size(149, 48);
+            this.tSoruPuan.TabIndex = 10;
+            this.tSoruPuan.TabStop = false;
+            this.tSoruPuan.Text = "5";
+            this.tSoruPuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tSoruPuan.TrailingIcon = null;
+            this.tSoruPuan.UseSystemPasswordChar = false;
+            // 
+            // bSettings
+            // 
+            this.bSettings.AutoSize = false;
+            this.bSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bSettings.Density = TulparUI.Controls.TulparButton.TulparButtonDensity.Default;
+            this.bSettings.Depth = 0;
+            this.bSettings.HighEmphasis = true;
+            this.bSettings.Icon = null;
+            this.bSettings.Location = new System.Drawing.Point(9, 306);
+            this.bSettings.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.bSettings.MouseState = TulparUI.MouseState.HOVER;
+            this.bSettings.Name = "bSettings";
+            this.bSettings.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.bSettings.Size = new System.Drawing.Size(250, 32);
+            this.bSettings.TabIndex = 11;
+            this.bSettings.Text = "Ayarları Kaydet";
+            this.bSettings.Type = TulparUI.Controls.TulparButton.TulparButtonType.Contained;
+            this.bSettings.UseAccentColor = false;
+            this.bSettings.UseVisualStyleBackColor = true;
+            this.bSettings.Click += new System.EventHandler(this.bSettings_Click);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2138, 1126);
+            this.ClientSize = new System.Drawing.Size(1425, 715);
+            this.Controls.Add(this.bSettings);
+            this.Controls.Add(this.tSoruPuan);
+            this.Controls.Add(this.tSoruSayisi);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lTopWorkS);
             this.Controls.Add(this.lAyrac);
             this.Controls.Add(this.lWorkS);
             this.Controls.Add(this.bExportExcel);
-            this.Controls.Add(this.ListSinav);
             this.Controls.Add(this.LogList);
             this.Controls.Add(this.tCevapAnahtari);
             this.Controls.Add(this.bDegerlendir);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(4, 98, 4, 5);
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "*.txt Sınav Değerlendirme Programı";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,6 +522,10 @@
         private TulparUI.Controls.TulparLabel lAyrac;
         public TulparUI.Controls.TulparLabel lWorkS;
         public TulparUI.Controls.TulparLabel lTopWorkS;
+        private System.Windows.Forms.Panel panel1;
+        private TulparUI.Controls.TulparTextBox tSoruSayisi;
+        private TulparUI.Controls.TulparTextBox tSoruPuan;
+        private TulparUI.Controls.TulparButton bSettings;
     }
 }
 

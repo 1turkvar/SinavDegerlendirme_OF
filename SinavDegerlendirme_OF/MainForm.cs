@@ -18,13 +18,22 @@ namespace SinavDegerlendirme_OF
             InitializeComponent();
         }
 
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Globals.mForm = this;
+
+            Globals.SoruSayisi = Convert.ToInt32(tSoruSayisi.Text);
+            tCevapAnahtari.MaxLength = Globals.SoruSayisi;
+
+            Globals.BirSoruPuan = Convert.ToInt32(tSoruPuan.Text);
         }
 
         private void bDegerlendir_Click(object sender, EventArgs e)
         {
+
+            ListSinav.Items.Clear();
+
             lTopWorkS.Text = "0000";
             lWorkS.Text = "0000";
             tCevapAnahtari.Text = tCevapAnahtari.Text.ToUpper();
@@ -88,6 +97,14 @@ namespace SinavDegerlendirme_OF
                 default:
                     break;
             }
+        }
+
+        private void bSettings_Click(object sender, EventArgs e)
+        {
+            Globals.SoruSayisi = Convert.ToInt32(tSoruSayisi.Text);
+            tCevapAnahtari.MaxLength = Globals.SoruSayisi;
+
+            Globals.BirSoruPuan = Convert.ToInt32(tSoruPuan.Text);
         }
     }
 }

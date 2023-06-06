@@ -14,7 +14,6 @@ namespace SinavDegerlendirme_OF
     {
         public static void Hesapla(string Path, string SinavCevapA)
         {
-            int SoruSayisi = 20;
             List<string> list = new List<string>();
             FileStream fileStream = new FileStream(Path, FileMode.Open, FileAccess.Read);
             using (StreamReader streamReader = new StreamReader(fileStream, Encoding.Default))
@@ -31,28 +30,14 @@ namespace SinavDegerlendirme_OF
 
             Globals.mForm.lTopWorkS.Text = Count.ToString();
 
-            string[] CevapAnahtari = new string[] {
-            SinavCevapA.Substring(0, 1),
-            SinavCevapA.Substring(1, 1),
-            SinavCevapA.Substring(2, 1),
-            SinavCevapA.Substring(3, 1),
-            SinavCevapA.Substring(4, 1),
-            SinavCevapA.Substring(5, 1),
-            SinavCevapA.Substring(6, 1),
-            SinavCevapA.Substring(7, 1),
-            SinavCevapA.Substring(8, 1),
-            SinavCevapA.Substring(9, 1),
-            SinavCevapA.Substring(10, 1),
-            SinavCevapA.Substring(11, 1),
-            SinavCevapA.Substring(12, 1),
-            SinavCevapA.Substring(13, 1),
-            SinavCevapA.Substring(14, 1),
-            SinavCevapA.Substring(15, 1),
-            SinavCevapA.Substring(16, 1),
-            SinavCevapA.Substring(17, 1),
-            SinavCevapA.Substring(18, 1),
-            SinavCevapA.Substring(19, 1)
-            };
+
+
+            string[] CevapAnahtari = new string[Globals.SoruSayisi];
+
+            for (int sc = 0; sc < SinavCevapA.Length; sc++)
+            {
+                CevapAnahtari[sc] = SinavCevapA[sc].ToString();
+            }
 
             try
             {
@@ -75,38 +60,23 @@ namespace SinavDegerlendirme_OF
                     string OkulTur = ln.Substring(54, 1);
                     string Cinsiyet = ln.Substring(55, 1);
                     string CevapTur = ln.Substring(56, 1);
-                    string AdayCevapAnahtari = ln.Substring(57, 20);
+                    string AdayCevapAnahtari = ln.Substring(57, Globals.SoruSayisi);
 
-                    string AdayCevap1 = ln.Substring(57, 1);
-                    string AdayCevap2 = ln.Substring(58, 1);
-                    string AdayCevap3 = ln.Substring(59, 1);
-                    string AdayCevap4 = ln.Substring(60, 1);
-                    string AdayCevap5 = ln.Substring(61, 1);
-                    string AdayCevap6 = ln.Substring(62, 1);
-                    string AdayCevap7 = ln.Substring(63, 1);
-                    string AdayCevap8 = ln.Substring(64, 1);
-                    string AdayCevap9 = ln.Substring(65, 1);
-                    string AdayCevap10 = ln.Substring(66, 1);
-                    string AdayCevap11 = ln.Substring(67, 1);
-                    string AdayCevap12 = ln.Substring(68, 1);
-                    string AdayCevap13 = ln.Substring(69, 1);
-                    string AdayCevap14 = ln.Substring(70, 1);
-                    string AdayCevap15 = ln.Substring(71, 1);
-                    string AdayCevap16 = ln.Substring(72, 1);
-                    string AdayCevap17 = ln.Substring(73, 1);
-                    string AdayCevap18 = ln.Substring(74, 1);
-                    string AdayCevap19 = ln.Substring(75, 1);
-                    string AdayCevap20 = ln.Substring(76, 1);
+                    string[] Cevap = new string[Globals.SoruSayisi];
 
-                    string[] Cevap = new string[] { AdayCevap1, AdayCevap2, AdayCevap3, AdayCevap4, AdayCevap5, AdayCevap6, AdayCevap7, AdayCevap8, AdayCevap9, AdayCevap10, AdayCevap11, AdayCevap12, AdayCevap13, AdayCevap14, AdayCevap15, AdayCevap16, AdayCevap17, AdayCevap18, AdayCevap19, AdayCevap20 };
+                    for (int s = 0; s < AdayCevapAnahtari.Length; s++)
+                    {
+                        Cevap[s] = AdayCevapAnahtari[s].ToString();
+                    }
 
-                    for (int a = 0; a < SoruSayisi; a++)
+
+                    for (int a = 0; a < Globals.SoruSayisi; a++)
                     {
                         if (Cevap[a] != null)
                         {
                             if (Cevap[a] == CevapAnahtari[a])
                             {
-                                Puan += 5;
+                                Puan += Globals.BirSoruPuan;
                                 DogruSayisi += 1;
                             }
                             else
@@ -127,8 +97,8 @@ namespace SinavDegerlendirme_OF
                     string OkulAdi = "Okul Bilgisi Gelmedi!";
                     switch (OkulKodu)
                     {
-                        case "0030":
-                            OkulAdi = "AFYONKARAHİSAR POMEM";
+                        case "0060":
+                            OkulAdi = "AKYURT POMEM";
                             break;
                         default:
                             break;
