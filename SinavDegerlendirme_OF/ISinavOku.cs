@@ -72,7 +72,7 @@ namespace SinavDegerlendirme_OF
 
                     for (int a = 0; a < Globals.SoruSayisi; a++)
                     {
-                        if (Cevap[a] != null)
+                        if (Cevap[a] != " ")
                         {
                             if (Cevap[a] == CevapAnahtari[a])
                             {
@@ -178,7 +178,7 @@ namespace SinavDegerlendirme_OF
             }
 
             wb.SaveAs(Path);
-            Logger.WriteLine("Kayıt edildi!", Logger.LOG_TYPE.Notify);
+            Logger.WriteLine("Excel'e aktarma tamamlandı!", Logger.LOG_TYPE.Notify);
         }
 
 

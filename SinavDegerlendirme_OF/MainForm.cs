@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TulparUI.Controls;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SinavDegerlendirme_OF
 {
@@ -27,45 +28,56 @@ namespace SinavDegerlendirme_OF
             tCevapAnahtari.MaxLength = Globals.SoruSayisi;
 
             Globals.BirSoruPuan = Convert.ToInt32(tSoruPuan.Text);
+
+            Logger.WriteLine("Soru sayısı, Soru karşılığı puan ve Cevap anahtarını ayarlamayı unutmayınız!", Logger.LOG_TYPE.Default);
+
         }
 
         private void bDegerlendir_Click(object sender, EventArgs e)
         {
-
-            ListSinav.Items.Clear();
-
-            lTopWorkS.Text = "0000";
-            lWorkS.Text = "0000";
-            tCevapAnahtari.Text = tCevapAnahtari.Text.ToUpper();
-
-            if (tCevapAnahtari.Text != string.Empty)
+            if (tSoruSayisi.Text != "" && tSoruPuan.Text != "")
             {
-                OpenFile.Filter = "Txt Belgesi|*.txt";
+                ListSinav.Items.Clear();
 
-                switch (OpenFile.ShowDialog())
+                lTopWorkS.Text = "0000";
+                lWorkS.Text = "0000";
+                tCevapAnahtari.Text = tCevapAnahtari.Text.ToUpper();
+
+                if (tCevapAnahtari.Text != string.Empty)
                 {
-                    case DialogResult.None:
-                        break;
-                    case DialogResult.OK:
-                        ISinavOku.Hesapla(OpenFile.FileName, tCevapAnahtari.Text);
-                        break;
-                    case DialogResult.Cancel:
-                        Logger.WriteLine("İptal Edildi.", Logger.LOG_TYPE.Notify);
-                        return;
-                    case DialogResult.Abort:
-                        break;
-                    case DialogResult.Retry:
-                        break;
-                    case DialogResult.Ignore:
-                        break;
-                    case DialogResult.Yes:
-                        break;
-                    case DialogResult.No:
-                        break;
-                    default:
-                        break;
+                    OpenFile.Filter = "Txt Belgesi|*.txt";
+
+                    switch (OpenFile.ShowDialog())
+                    {
+                        case DialogResult.None:
+                            break;
+                        case DialogResult.OK:
+                            ISinavOku.Hesapla(OpenFile.FileName, tCevapAnahtari.Text);
+                            break;
+                        case DialogResult.Cancel:
+                            Logger.WriteLine("İptal Edildi.", Logger.LOG_TYPE.Notify);
+                            return;
+                        case DialogResult.Abort:
+                            break;
+                        case DialogResult.Retry:
+                            break;
+                        case DialogResult.Ignore:
+                            break;
+                        case DialogResult.Yes:
+                            break;
+                        case DialogResult.No:
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
+            else
+            {
+                Logger.WriteLine("Soru sayısı ve sorunun puan karşılığını boş bırakmayınız!", Logger.LOG_TYPE.Notify);
+
+            }
+
         }
 
         private void bExportExcel_Click(object sender, EventArgs e)
@@ -80,6 +92,7 @@ namespace SinavDegerlendirme_OF
                 case DialogResult.None:
                     break;
                 case DialogResult.OK:
+                    Logger.WriteLine("Excel'e aktarma başlatıldı.", Logger.LOG_TYPE.Notify);
                     ISinavOku.ExportExcel(SaveFile.FileName);
                     break;
                 case DialogResult.Cancel:
@@ -105,6 +118,32 @@ namespace SinavDegerlendirme_OF
             tCevapAnahtari.MaxLength = Globals.SoruSayisi;
 
             Globals.BirSoruPuan = Convert.ToInt32(tSoruPuan.Text);
+
+            Logger.WriteLine("Ayarlar kaydedildi!", Logger.LOG_TYPE.Notify);
+        }
+
+        private void tCevapAnahtari_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Girilen karakterin sayı olup olmadığını veya boşluk karakteri olup olmadığını kontrol et
+            if (char.IsDigit(e.KeyChar))
+            {
+                // Geçersiz karakter varsa kullanıcının girişini engelle
+                e.Handled = true;
+                MessageBox.Show("Sadece sayı ve boş karakter girebilirsiniz.");
+            }
+            else if(e.KeyChar == '\b')
+            {
+                e.Handled = true;
+                MessageBox.Show("Sadece sayı ve boş karakter girebilirsiniz.");
+            }
+            // Boşluk karakterini kontrol et
+            else if (e.KeyChar == ' ' )
+            {
+                e.Handled = true;
+                MessageBox.Show("Sadece sayı ve boş karakter girebilirsiniz.");
+            }
+
+
         }
     }
 }

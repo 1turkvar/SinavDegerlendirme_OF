@@ -22,3 +22,15 @@ F:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.c
 F:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.csproj.CopyComplete
 F:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.exe
 F:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.pdb
+D:\SinavDegerlendirme_OF\BinOut\SinavDegerlendirme_OF.exe.config
+D:\SinavDegerlendirme_OF\BinOut\SinavDegerlendirme_OF.exe
+D:\SinavDegerlendirme_OF\BinOut\SinavDegerlendirme_OF.pdb
+D:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.csproj.AssemblyReference.cache
+D:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.MainForm.resources
+D:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.Properties.Resources.resources
+D:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.csproj.GenerateResource.cache
+D:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.csproj.CoreCompileInputs.cache
+D:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.csproj.CopyComplete
+D:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.exe
+D:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.pdb
+D:\SinavDegerlendirme_OF\SinavDegerlendirme_OF\obj\Debug\SinavDegerlendirme_OF.csproj.SuggestedBindingRedirects.cache

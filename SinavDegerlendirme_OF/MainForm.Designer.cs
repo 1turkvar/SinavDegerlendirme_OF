@@ -80,7 +80,7 @@
             this.bDegerlendir.Depth = 0;
             this.bDegerlendir.HighEmphasis = true;
             this.bDegerlendir.Icon = null;
-            this.bDegerlendir.Location = new System.Drawing.Point(9, 134);
+            this.bDegerlendir.Location = new System.Drawing.Point(6, 232);
             this.bDegerlendir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bDegerlendir.MouseState = TulparUI.MouseState.HOVER;
             this.bDegerlendir.Name = "bDegerlendir";
@@ -106,7 +106,7 @@
             this.tCevapAnahtari.HideSelection = false;
             this.tCevapAnahtari.Hint = "Cevap Anahtarı";
             this.tCevapAnahtari.LeadingIcon = null;
-            this.tCevapAnahtari.Location = new System.Drawing.Point(9, 67);
+            this.tCevapAnahtari.Location = new System.Drawing.Point(6, 165);
             this.tCevapAnahtari.MaxLength = 20;
             this.tCevapAnahtari.MouseState = TulparUI.MouseState.OUT;
             this.tCevapAnahtari.Name = "tCevapAnahtari";
@@ -124,6 +124,7 @@
             this.tCevapAnahtari.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tCevapAnahtari.TrailingIcon = null;
             this.tCevapAnahtari.UseSystemPasswordChar = false;
+            this.tCevapAnahtari.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tCevapAnahtari_KeyPress);
             // 
             // LogList
             // 
@@ -312,7 +313,7 @@
             this.bExportExcel.Depth = 0;
             this.bExportExcel.HighEmphasis = true;
             this.bExportExcel.Icon = null;
-            this.bExportExcel.Location = new System.Drawing.Point(9, 177);
+            this.bExportExcel.Location = new System.Drawing.Point(6, 275);
             this.bExportExcel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bExportExcel.MouseState = TulparUI.MouseState.HOVER;
             this.bExportExcel.Name = "bExportExcel";
@@ -378,11 +379,11 @@
             this.tSoruSayisi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tSoruSayisi.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tSoruSayisi.Depth = 0;
-            this.tSoruSayisi.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tSoruSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tSoruSayisi.HideSelection = true;
             this.tSoruSayisi.Hint = "Soru Sayısı";
             this.tSoruSayisi.LeadingIcon = null;
-            this.tSoruSayisi.Location = new System.Drawing.Point(6, 249);
+            this.tSoruSayisi.Location = new System.Drawing.Point(3, 67);
             this.tSoruSayisi.MaxLength = 32767;
             this.tSoruSayisi.MouseState = TulparUI.MouseState.OUT;
             this.tSoruSayisi.Name = "tSoruSayisi";
@@ -414,7 +415,7 @@
             this.tSoruPuan.HideSelection = true;
             this.tSoruPuan.Hint = "Bir Soru Karşılığı Puan";
             this.tSoruPuan.LeadingIcon = null;
-            this.tSoruPuan.Location = new System.Drawing.Point(110, 249);
+            this.tSoruPuan.Location = new System.Drawing.Point(107, 67);
             this.tSoruPuan.MaxLength = 32767;
             this.tSoruPuan.MouseState = TulparUI.MouseState.OUT;
             this.tSoruPuan.Name = "tSoruPuan";
@@ -442,7 +443,7 @@
             this.bSettings.Depth = 0;
             this.bSettings.HighEmphasis = true;
             this.bSettings.Icon = null;
-            this.bSettings.Location = new System.Drawing.Point(9, 306);
+            this.bSettings.Location = new System.Drawing.Point(6, 124);
             this.bSettings.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bSettings.MouseState = TulparUI.MouseState.HOVER;
             this.bSettings.Name = "bSettings";
