@@ -1,8 +1,0 @@
-C:\Users\semih\OneDrive\Masaüstü\SinavDegerlendirme_OF\BinOut\TulparUI.dll
-C:\Users\semih\OneDrive\Masaüstü\SinavDegerlendirme_OF\BinOut\TulparUI.pdb
-C:\Users\semih\OneDrive\Masaüstü\SinavDegerlendirme_OF\TulparUI\obj\Debug\TulparUI.csproj.AssemblyReference.cache
-C:\Users\semih\OneDrive\Masaüstü\SinavDegerlendirme_OF\TulparUI\obj\Debug\TulparUI.Properties.Resources.resources
-C:\Users\semih\OneDrive\Masaüstü\SinavDegerlendirme_OF\TulparUI\obj\Debug\TulparUI.csproj.GenerateResource.cache
-C:\Users\semih\OneDrive\Masaüstü\SinavDegerlendirme_OF\TulparUI\obj\Debug\TulparUI.csproj.CoreCompileInputs.cache
-C:\Users\semih\OneDrive\Masaüstü\SinavDegerlendirme_OF\TulparUI\obj\Debug\TulparUI.dll
-C:\Users\semih\OneDrive\Masaüstü\SinavDegerlendirme_OF\TulparUI\obj\Debug\TulparUI.pdb

@@ -1,8 +1,0 @@
-C:\Users\semih\OneDrive\Masaüstü\IBEYS\BinOut\TulparUI.dll
-C:\Users\semih\OneDrive\Masaüstü\IBEYS\BinOut\TulparUI.pdb
-C:\Users\semih\OneDrive\Masaüstü\IBEYS\TulparUI\obj\Release\TulparUI.csproj.AssemblyReference.cache
-C:\Users\semih\OneDrive\Masaüstü\IBEYS\TulparUI\obj\Release\TulparUI.Properties.Resources.resources
-C:\Users\semih\OneDrive\Masaüstü\IBEYS\TulparUI\obj\Release\TulparUI.csproj.GenerateResource.cache
-C:\Users\semih\OneDrive\Masaüstü\IBEYS\TulparUI\obj\Release\TulparUI.csproj.CoreCompileInputs.cache
-C:\Users\semih\OneDrive\Masaüstü\IBEYS\TulparUI\obj\Release\TulparUI.dll
-C:\Users\semih\OneDrive\Masaüstü\IBEYS\TulparUI\obj\Release\TulparUI.pdb
