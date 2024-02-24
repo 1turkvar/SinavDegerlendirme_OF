@@ -88,12 +88,11 @@
             this.cSekizDYanlisS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSekizDBosS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSekizDSinavPuan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bExportExcel = new MaterialSkin.Controls.MaterialButton();
+            this.BExportSinavDegExcel = new MaterialSkin.Controls.MaterialButton();
             this.SaveFile = new System.Windows.Forms.SaveFileDialog();
             this.lWorkS = new MaterialSkin.Controls.MaterialLabel();
             this.lAyrac = new MaterialSkin.Controls.MaterialLabel();
             this.lTopWorkS = new MaterialSkin.Controls.MaterialLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tBirDSoruSayisi = new MaterialSkin.Controls.MaterialTextBox2();
             this.tBirDSoruPuan = new MaterialSkin.Controls.MaterialTextBox2();
             this.bSettings = new MaterialSkin.Controls.MaterialButton();
@@ -116,7 +115,30 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lTextInfo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ListIstatistik = new System.Windows.Forms.ListView();
+            this.SoruNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DogruCevap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ATur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AturYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Btur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BturYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CTur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CturYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DTur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DturYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ETur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EturYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BosTur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BosTurYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DogruSay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DogruYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.YanlisSay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.YanlisYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ZorlukDerece = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ZorlukDereceYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BSinavIstatistikExport = new MaterialSkin.Controls.MaterialButton();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bDegerlendir
@@ -125,6 +147,7 @@
             this.bDegerlendir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.bDegerlendir.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.bDegerlendir.Depth = 0;
+            this.bDegerlendir.Enabled = false;
             this.bDegerlendir.HighEmphasis = true;
             this.bDegerlendir.Icon = null;
             this.bDegerlendir.Location = new System.Drawing.Point(8, 654);
@@ -138,7 +161,7 @@
             this.bDegerlendir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.bDegerlendir.UseAccentColor = false;
             this.bDegerlendir.UseVisualStyleBackColor = true;
-            this.bDegerlendir.Click += new System.EventHandler(this.bDegerlendir_Click);
+            this.bDegerlendir.Click += new System.EventHandler(this.BDegerlendir_Click);
             // 
             // LogList
             // 
@@ -147,10 +170,11 @@
             this.cType,
             this.cMsg});
             this.LogList.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LogList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LogList.FullRowSelect = true;
             this.LogList.GridLines = true;
             this.LogList.HideSelection = false;
-            this.LogList.Location = new System.Drawing.Point(3, 766);
+            this.LogList.Location = new System.Drawing.Point(3, 825);
             this.LogList.Name = "LogList";
             this.LogList.Size = new System.Drawing.Size(1824, 106);
             this.LogList.TabIndex = 2;
@@ -238,6 +262,9 @@
             // 
             // ListSinav
             // 
+            this.ListSinav.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ListSinav.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cAd,
             this.cSoyad,
@@ -279,13 +306,12 @@
             this.cSekizDYanlisS,
             this.cSekizDBosS,
             this.cSekizDSinavPuan});
-            this.ListSinav.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListSinav.FullRowSelect = true;
             this.ListSinav.GridLines = true;
             this.ListSinav.HideSelection = false;
-            this.ListSinav.Location = new System.Drawing.Point(0, 0);
+            this.ListSinav.Location = new System.Drawing.Point(3, 3);
             this.ListSinav.Name = "ListSinav";
-            this.ListSinav.Size = new System.Drawing.Size(1487, 702);
+            this.ListSinav.Size = new System.Drawing.Size(1478, 464);
             this.ListSinav.TabIndex = 3;
             this.ListSinav.UseCompatibleStateImageBehavior = false;
             this.ListSinav.View = System.Windows.Forms.View.Details;
@@ -490,33 +516,33 @@
             this.cSekizDSinavPuan.Text = "8. Ders Sınav Puan";
             this.cSekizDSinavPuan.Width = 80;
             // 
-            // bExportExcel
+            // BExportSinavDegExcel
             // 
-            this.bExportExcel.AutoSize = false;
-            this.bExportExcel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bExportExcel.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.bExportExcel.Depth = 0;
-            this.bExportExcel.HighEmphasis = true;
-            this.bExportExcel.Icon = null;
-            this.bExportExcel.Location = new System.Drawing.Point(8, 698);
-            this.bExportExcel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.bExportExcel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.bExportExcel.Name = "bExportExcel";
-            this.bExportExcel.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.bExportExcel.Size = new System.Drawing.Size(328, 32);
-            this.bExportExcel.TabIndex = 4;
-            this.bExportExcel.Text = "Excel Olarak Kaydet";
-            this.bExportExcel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.bExportExcel.UseAccentColor = true;
-            this.bExportExcel.UseVisualStyleBackColor = true;
-            this.bExportExcel.Click += new System.EventHandler(this.bExportExcel_Click);
+            this.BExportSinavDegExcel.AutoSize = false;
+            this.BExportSinavDegExcel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BExportSinavDegExcel.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BExportSinavDegExcel.Depth = 0;
+            this.BExportSinavDegExcel.HighEmphasis = true;
+            this.BExportSinavDegExcel.Icon = null;
+            this.BExportSinavDegExcel.Location = new System.Drawing.Point(8, 698);
+            this.BExportSinavDegExcel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BExportSinavDegExcel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BExportSinavDegExcel.Name = "BExportSinavDegExcel";
+            this.BExportSinavDegExcel.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BExportSinavDegExcel.Size = new System.Drawing.Size(328, 32);
+            this.BExportSinavDegExcel.TabIndex = 4;
+            this.BExportSinavDegExcel.Text = "Sonuçları Excel Olarak Kaydet";
+            this.BExportSinavDegExcel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.BExportSinavDegExcel.UseAccentColor = true;
+            this.BExportSinavDegExcel.UseVisualStyleBackColor = true;
+            this.BExportSinavDegExcel.Click += new System.EventHandler(this.BExportSinavDegExcel_Click);
             // 
             // lWorkS
             // 
             this.lWorkS.AutoSize = true;
             this.lWorkS.Depth = 0;
             this.lWorkS.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lWorkS.Location = new System.Drawing.Point(113, 736);
+            this.lWorkS.Location = new System.Drawing.Point(121, 776);
             this.lWorkS.MouseState = MaterialSkin.MouseState.HOVER;
             this.lWorkS.Name = "lWorkS";
             this.lWorkS.Size = new System.Drawing.Size(37, 19);
@@ -528,7 +554,7 @@
             this.lAyrac.AutoSize = true;
             this.lAyrac.Depth = 0;
             this.lAyrac.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lAyrac.Location = new System.Drawing.Point(156, 736);
+            this.lAyrac.Location = new System.Drawing.Point(164, 776);
             this.lAyrac.MouseState = MaterialSkin.MouseState.HOVER;
             this.lAyrac.Name = "lAyrac";
             this.lAyrac.Size = new System.Drawing.Size(8, 19);
@@ -540,23 +566,12 @@
             this.lTopWorkS.AutoSize = true;
             this.lTopWorkS.Depth = 0;
             this.lTopWorkS.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lTopWorkS.Location = new System.Drawing.Point(170, 736);
+            this.lTopWorkS.Location = new System.Drawing.Point(178, 776);
             this.lTopWorkS.MouseState = MaterialSkin.MouseState.HOVER;
             this.lTopWorkS.Name = "lTopWorkS";
             this.lTopWorkS.Size = new System.Drawing.Size(37, 19);
             this.lTopWorkS.TabIndex = 7;
             this.lTopWorkS.Text = "0000";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.ListSinav);
-            this.panel1.Location = new System.Drawing.Point(340, 64);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1487, 702);
-            this.panel1.TabIndex = 8;
             // 
             // tBirDSoruSayisi
             // 
@@ -637,7 +652,7 @@
             this.bSettings.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.bSettings.UseAccentColor = false;
             this.bSettings.UseVisualStyleBackColor = true;
-            this.bSettings.Click += new System.EventHandler(this.bSettings_Click);
+            this.bSettings.Click += new System.EventHandler(this.BSettings_Click);
             // 
             // tToplamSoruSayisi
             // 
@@ -1096,7 +1111,7 @@
             this.tCevapAnahtari.Name = "tCevapAnahtari";
             this.tCevapAnahtari.Size = new System.Drawing.Size(328, 26);
             this.tCevapAnahtari.TabIndex = 27;
-            this.tCevapAnahtari.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tCevapAnahtari_KeyDown);
+            this.tCevapAnahtari.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TCevapAnahtari_KeyDown);
             // 
             // label1
             // 
@@ -1127,11 +1142,173 @@
             this.label2.Text = "Bir soru karşılığı puan; eğerki ondalık ise virgül kullanarak yazınız. Örn: 1,8";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.ListIstatistik, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ListSinav, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(343, 64);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 291F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1484, 761);
+            this.tableLayoutPanel1.TabIndex = 31;
+            // 
+            // ListIstatistik
+            // 
+            this.ListIstatistik.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListIstatistik.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.SoruNo,
+            this.DogruCevap,
+            this.ATur,
+            this.AturYuzde,
+            this.Btur,
+            this.BturYuzde,
+            this.CTur,
+            this.CturYuzde,
+            this.DTur,
+            this.DturYuzde,
+            this.ETur,
+            this.EturYuzde,
+            this.BosTur,
+            this.BosTurYuzde,
+            this.DogruSay,
+            this.DogruYuzde,
+            this.YanlisSay,
+            this.YanlisYuzde,
+            this.ZorlukDerece,
+            this.ZorlukDereceYuzde});
+            this.ListIstatistik.FullRowSelect = true;
+            this.ListIstatistik.GridLines = true;
+            this.ListIstatistik.HideSelection = false;
+            this.ListIstatistik.Location = new System.Drawing.Point(3, 473);
+            this.ListIstatistik.Name = "ListIstatistik";
+            this.ListIstatistik.Size = new System.Drawing.Size(1478, 285);
+            this.ListIstatistik.TabIndex = 4;
+            this.ListIstatistik.UseCompatibleStateImageBehavior = false;
+            this.ListIstatistik.View = System.Windows.Forms.View.Details;
+            // 
+            // SoruNo
+            // 
+            this.SoruNo.Text = "Soru No";
+            // 
+            // DogruCevap
+            // 
+            this.DogruCevap.Text = "Doğru Cevap";
+            this.DogruCevap.Width = 100;
+            // 
+            // ATur
+            // 
+            this.ATur.Text = "A";
+            // 
+            // AturYuzde
+            // 
+            this.AturYuzde.Text = "A %";
+            // 
+            // Btur
+            // 
+            this.Btur.Text = "B";
+            // 
+            // BturYuzde
+            // 
+            this.BturYuzde.Text = "B %";
+            // 
+            // CTur
+            // 
+            this.CTur.Text = "C";
+            // 
+            // CturYuzde
+            // 
+            this.CturYuzde.Text = "C %";
+            // 
+            // DTur
+            // 
+            this.DTur.Text = "D";
+            // 
+            // DturYuzde
+            // 
+            this.DturYuzde.Text = "D %";
+            // 
+            // ETur
+            // 
+            this.ETur.Text = "E";
+            // 
+            // EturYuzde
+            // 
+            this.EturYuzde.Text = "E %";
+            // 
+            // BosTur
+            // 
+            this.BosTur.Text = "Boş";
+            // 
+            // BosTurYuzde
+            // 
+            this.BosTurYuzde.Text = "Bos %";
+            // 
+            // DogruSay
+            // 
+            this.DogruSay.Text = "Toplam Doğru";
+            this.DogruSay.Width = 100;
+            // 
+            // DogruYuzde
+            // 
+            this.DogruYuzde.Text = "Toplam Doğru %";
+            this.DogruYuzde.Width = 100;
+            // 
+            // YanlisSay
+            // 
+            this.YanlisSay.Text = "Toplam Yanlış";
+            this.YanlisSay.Width = 100;
+            // 
+            // YanlisYuzde
+            // 
+            this.YanlisYuzde.Text = "Toplam Yanlış %";
+            this.YanlisYuzde.Width = 100;
+            // 
+            // ZorlukDerece
+            // 
+            this.ZorlukDerece.Text = "Soru Zorluk Derecesi";
+            this.ZorlukDerece.Width = 100;
+            // 
+            // ZorlukDereceYuzde
+            // 
+            this.ZorlukDereceYuzde.Text = "Soru Zorluk Derecesi %";
+            this.ZorlukDereceYuzde.Width = 100;
+            // 
+            // BSinavIstatistikExport
+            // 
+            this.BSinavIstatistikExport.AutoSize = false;
+            this.BSinavIstatistikExport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BSinavIstatistikExport.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BSinavIstatistikExport.Depth = 0;
+            this.BSinavIstatistikExport.HighEmphasis = true;
+            this.BSinavIstatistikExport.Icon = null;
+            this.BSinavIstatistikExport.Location = new System.Drawing.Point(6, 738);
+            this.BSinavIstatistikExport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BSinavIstatistikExport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BSinavIstatistikExport.Name = "BSinavIstatistikExport";
+            this.BSinavIstatistikExport.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BSinavIstatistikExport.Size = new System.Drawing.Size(328, 32);
+            this.BSinavIstatistikExport.TabIndex = 32;
+            this.BSinavIstatistikExport.Text = "Sınav İstatistiğini Excel Olarak Kaydet";
+            this.BSinavIstatistikExport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.BSinavIstatistikExport.UseAccentColor = true;
+            this.BSinavIstatistikExport.UseVisualStyleBackColor = true;
+            this.BSinavIstatistikExport.Click += new System.EventHandler(this.BSinavIstatistikExport_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1830, 875);
+            this.ClientSize = new System.Drawing.Size(1830, 934);
+            this.Controls.Add(this.BSinavIstatistikExport);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lTextInfo);
             this.Controls.Add(this.label1);
@@ -1154,11 +1331,10 @@
             this.Controls.Add(this.bSettings);
             this.Controls.Add(this.tBirDSoruPuan);
             this.Controls.Add(this.tBirDSoruSayisi);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lTopWorkS);
             this.Controls.Add(this.lAyrac);
             this.Controls.Add(this.lWorkS);
-            this.Controls.Add(this.bExportExcel);
+            this.Controls.Add(this.BExportSinavDegExcel);
             this.Controls.Add(this.LogList);
             this.Controls.Add(this.bDegerlendir);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1168,7 +1344,7 @@
             this.Text = "*.txt Sınav Değerlendirme Programı";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1207,12 +1383,11 @@
         private System.Windows.Forms.ColumnHeader cBirDBosS;
         private System.Windows.Forms.ColumnHeader cBirDSinavPuan;
         public System.Windows.Forms.ListView ListSinav;
-        private MaterialSkin.Controls.MaterialButton bExportExcel;
+        private MaterialSkin.Controls.MaterialButton BExportSinavDegExcel;
         private System.Windows.Forms.SaveFileDialog SaveFile;
         private MaterialSkin.Controls.MaterialLabel lAyrac;
         public MaterialSkin.Controls.MaterialLabel lWorkS;
         public MaterialSkin.Controls.MaterialLabel lTopWorkS;
-        private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialTextBox2 tBirDSoruSayisi;
         private MaterialSkin.Controls.MaterialTextBox2 tBirDSoruPuan;
         private MaterialSkin.Controls.MaterialButton bSettings;
@@ -1263,6 +1438,29 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lTextInfo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.ListView ListIstatistik;
+        private System.Windows.Forms.ColumnHeader SoruNo;
+        private System.Windows.Forms.ColumnHeader DogruCevap;
+        private System.Windows.Forms.ColumnHeader ATur;
+        private System.Windows.Forms.ColumnHeader AturYuzde;
+        private System.Windows.Forms.ColumnHeader Btur;
+        private System.Windows.Forms.ColumnHeader BturYuzde;
+        private System.Windows.Forms.ColumnHeader CTur;
+        private System.Windows.Forms.ColumnHeader CturYuzde;
+        private System.Windows.Forms.ColumnHeader DTur;
+        private System.Windows.Forms.ColumnHeader DturYuzde;
+        private System.Windows.Forms.ColumnHeader ETur;
+        private System.Windows.Forms.ColumnHeader EturYuzde;
+        private System.Windows.Forms.ColumnHeader BosTur;
+        private System.Windows.Forms.ColumnHeader BosTurYuzde;
+        private MaterialSkin.Controls.MaterialButton BSinavIstatistikExport;
+        private System.Windows.Forms.ColumnHeader DogruSay;
+        private System.Windows.Forms.ColumnHeader DogruYuzde;
+        private System.Windows.Forms.ColumnHeader YanlisSay;
+        private System.Windows.Forms.ColumnHeader YanlisYuzde;
+        private System.Windows.Forms.ColumnHeader ZorlukDerece;
+        private System.Windows.Forms.ColumnHeader ZorlukDereceYuzde;
     }
 }
 

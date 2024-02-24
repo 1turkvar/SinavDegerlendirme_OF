@@ -8,10 +8,10 @@ namespace SinavDegerlendirme_OF
     {
         public enum LOG_TYPE
         {
-            Default,
-            Notify,
-            Warning,
-            Fatal
+            Sistem,
+            Duyuru,
+            Hata,
+            Bilgi
         }
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace SinavDegerlendirme_OF
         /// </summary>
         /// <param name="Content"></param>
         /// <param name="type"></param>
-        public static void WriteLine(string Content, LOG_TYPE type = LOG_TYPE.Default)
+        public static void WriteLine(string Content, LOG_TYPE type = LOG_TYPE.Sistem)
         {
             string[][] data = new[]
             {
@@ -35,16 +35,20 @@ namespace SinavDegerlendirme_OF
                     Color foreColor = Color.Black;
                     switch (type)
                     {
-                        case LOG_TYPE.Default:
+                        //Bilgi Mesajları
+                        case LOG_TYPE.Bilgi:
                             foreColor = Color.Black;
                             break;
-                        case LOG_TYPE.Notify:
+                        //Duyuru Mesajları
+                        case LOG_TYPE.Duyuru:
                             foreColor = Color.Green;
                             break;
-                        case LOG_TYPE.Warning:
+                        //Sistem mesajları
+                        case LOG_TYPE.Sistem:
                             foreColor = Color.OrangeRed;
                             break;
-                        case Logger.LOG_TYPE.Fatal:
+                        //Sistem tarafından hata fırlatmalarını yakalamak için
+                        case Logger.LOG_TYPE.Hata:
                             foreColor = Color.Red;
                             break;
                     }

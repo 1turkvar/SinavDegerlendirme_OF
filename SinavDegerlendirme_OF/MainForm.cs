@@ -1,9 +1,6 @@
-﻿using System;
-using System.Reflection.Emit;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SinavDegerlendirme_OF
 {
@@ -18,30 +15,7 @@ namespace SinavDegerlendirme_OF
         {
             Globals.ToplamSoruSayisi = Convert.ToInt32(tToplamSoruSayisi.Text);
             tCevapAnahtari.MaxLength = Globals.ToplamSoruSayisi;
-
-            //Globals.BirinciDersSoruSayisi = Convert.ToInt32(tBirDSoruSayisi.Text);
-            //Globals.BirinciDersBirSoruPuan = Convert.ToInt32(tBirDSoruPuan.Text);
-
-            //Globals.IkinciDersSoruSayisi = Convert.ToInt32(tIkiDSoruSayisi.Text);
-            //Globals.IkinciDersBirSoruPuan = Convert.ToInt32(tIkiDSoruPuan.Text);
-
-            //Globals.UcDersSoruSayisi = Convert.ToInt32(tUcDSoruSayisi.Text);
-            //Globals.UcDersBirSoruPuan = Convert.ToInt32(tUcDSoruPuan.Text);
-
-            //Globals.DortDersSoruSayisi = Convert.ToInt32(tDortDSoruSayisi.Text);
-            //Globals.DortDersBirSoruPuan = Convert.ToInt32(tDortDSoruPuan.Text);
-
-            //Globals.BesDersSoruSayisi = Convert.ToInt32(tBesDSoruSayisi.Text);
-            //Globals.BesDersBirSoruPuan = Convert.ToInt32(tBesDSoruPuan.Text);
-
-            //Globals.AltiDersSoruSayisi = Convert.ToInt32(tAltiDSoruSayisi.Text);
-            //Globals.AltiDersBirSoruPuan = Convert.ToInt32(tAltiDSoruPuan.Text);
-
-            //Globals.YediDersSoruSayisi = Convert.ToInt32(tYediDSoruSayisi.Text);
-            //Globals.YediDersBirSoruPuan = Convert.ToInt32(tYediDSoruPuan.Text);
-
-            //Globals.SekizDersSoruSayisi = Convert.ToInt32(tSekizDSoruSayisi.Text);
-            //Globals.SekizDersBirSoruPuan = Convert.ToInt32(tSekizDSoruPuan.Text);
+            bDegerlendir.Enabled = true;
 
 
             Globals.BirinciDersSoruSayisi = Convert.ToInt32(tBirDSoruSayisi.Text);
@@ -74,14 +48,18 @@ namespace SinavDegerlendirme_OF
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             Globals.mForm = this;
 
             Settings();
-            Logger.WriteLine("Soru sayısı, Soru karşılığı puan ve Cevap anahtarını ayarlamayı unutmayınız!", Logger.LOG_TYPE.Default);
+            Logger.WriteLine("Güncelleme durumunu: https://github.com/1turkvar/SinavDegerlendirme_OF sayfasından, Releases bölümünden takip edebilirsiniz.", Logger.LOG_TYPE.Bilgi);
+            Logger.WriteLine("Soru sayısı, Soru karşılığı puan ve Cevap anahtarını ayarlamayı unutmayınız!", Logger.LOG_TYPE.Bilgi);
+            Logger.WriteLine("Sınav değerlendirmesi yapmanız için ayarları yapıp, ayarları kaydet butonuna basmanız gerekmektedir.", Logger.LOG_TYPE.Bilgi);
+
 
         }
 
-        private void bDegerlendir_Click(object sender, EventArgs e)
+        private void BDegerlendir_Click(object sender, EventArgs e)
         {
             int SoruTopla = Globals.BirinciDersSoruSayisi +
                 Globals.IkinciDersSoruSayisi +
@@ -97,6 +75,7 @@ namespace SinavDegerlendirme_OF
                 if (tToplamSoruSayisi.Text != "" && tBirDSoruSayisi.Text != "" && tBirDSoruPuan.Text != "")
                 {
                     ListSinav.Items.Clear();
+                    ListIstatistik.Items.Clear();
 
                     lTopWorkS.Text = "0000";
                     lWorkS.Text = "0000";
@@ -111,10 +90,12 @@ namespace SinavDegerlendirme_OF
                             case DialogResult.None:
                                 break;
                             case DialogResult.OK:
-                                ISinavOku.Hesapla(OpenFile.FileName, tCevapAnahtari.Text);
+                                //ISinavOku.Hesapla(OpenFile.FileName, tCevapAnahtari.Text);
+                                SinavOku.SinavHesapla(OpenFile.FileName, tCevapAnahtari.Text);
+
                                 break;
                             case DialogResult.Cancel:
-                                Logger.WriteLine("İptal Edildi.", Logger.LOG_TYPE.Notify);
+                                Logger.WriteLine("İptal Edildi.", Logger.LOG_TYPE.Sistem);
                                 return;
                             case DialogResult.Abort:
                                 break;
@@ -132,66 +113,35 @@ namespace SinavDegerlendirme_OF
                     }
                     else
                     {
-                        Logger.WriteLine("Cevap anahtarını giriniz. Soru sayısı ve sorunun puan karşılığını boş bırakmayınız!", Logger.LOG_TYPE.Fatal);
+                        Logger.WriteLine("Cevap anahtarını giriniz. Soru sayısı ve sorunun puan karşılığını boş bırakmayınız!", Logger.LOG_TYPE.Bilgi);
                     }
                 }
                 else
                 {
-                    Logger.WriteLine("Soru sayısı ve sorunun puan karşılığını boş bırakmayınız!", Logger.LOG_TYPE.Notify);
+                    Logger.WriteLine("Soru sayısı ve sorunun puan karşılığını boş bırakmayınız!", Logger.LOG_TYPE.Bilgi);
                 }
             }
             else
             {
-                Logger.WriteLine("Toplam soru sayısı ile ders başı soru sayıları eşit değil!", Logger.LOG_TYPE.Notify);
+                Logger.WriteLine("Toplam soru sayısı ile ders başı soru sayıları eşit değil!", Logger.LOG_TYPE.Sistem);
             }
         }
 
-        private void bExportExcel_Click(object sender, EventArgs e)
+        private void BSettings_Click(object sender, EventArgs e)
         {
-            lTopWorkS.Text = "0000";
-            lWorkS.Text = "0000";
-
-            SaveFile.Filter = "Excel|*.xlsx";
-            SaveFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            if (ListSinav.Items.Count > 0)
+            if(tCevapAnahtari.Text != "")
             {
-                switch (SaveFile.ShowDialog())
-                {
-                    case DialogResult.None:
-                        break;
-                    case DialogResult.OK:
-                        Logger.WriteLine("Excel'e aktarma başlatıldı.", Logger.LOG_TYPE.Notify);
-                        ISinavOku.ExportExcel(SaveFile.FileName);
-                        break;
-                    case DialogResult.Cancel:
-                        break;
-                    case DialogResult.Abort:
-                        break;
-                    case DialogResult.Retry:
-                        break;
-                    case DialogResult.Ignore:
-                        break;
-                    case DialogResult.Yes:
-                        break;
-                    case DialogResult.No:
-                        break;
-                    default:
-                        break;
-                }
+                Settings();
+                Logger.WriteLine("Ayarlar kaydedildi!", Logger.LOG_TYPE.Sistem);
             }
             else
             {
-                Logger.WriteLine("Excel'e aktarma başlatılamadı. Liste boş!!!", Logger.LOG_TYPE.Warning);
+                Logger.WriteLine("Cevap anahtarı kısmı boş!", Logger.LOG_TYPE.Hata);
             }
+
         }
 
-        private void bSettings_Click(object sender, EventArgs e)
-        {
-            Settings();
-            Logger.WriteLine("Ayarlar kaydedildi!", Logger.LOG_TYPE.Notify);
-        }
-
-        private void tCevapAnahtari_KeyPress(object sender, KeyPressEventArgs e)
+        private void TCevapAnahtari_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Girilen karakterin büyük harf, küçük harf veya boşluk karakteri olup olmadığını kontrol et
             if (char.IsLetter(
@@ -229,7 +179,7 @@ namespace SinavDegerlendirme_OF
             lTextInfo.Text = a.ToString() + " / " + tCevapAnahtari.Text.Length.ToString();
         }
 
-        private void tCevapAnahtari_KeyDown(object sender, KeyEventArgs e)
+        private void TCevapAnahtari_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Right)
             {
@@ -240,6 +190,81 @@ namespace SinavDegerlendirme_OF
             {
                 SelectCharacter(-1);
                 e.Handled = true;
+            }
+        }
+
+        private void BExportSinavDegExcel_Click(object sender, EventArgs e)
+        {
+            lTopWorkS.Text = "0000";
+            lWorkS.Text = "0000";
+
+            SaveFile.Filter = "Excel|*.xlsx";
+            SaveFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if (ListSinav.Items.Count > 0)
+            {
+                switch (SaveFile.ShowDialog())
+                {
+                    case DialogResult.None:
+                        break;
+                    case DialogResult.OK:
+                        Logger.WriteLine("Excel'e aktarma başlatıldı.", Logger.LOG_TYPE.Hata);
+                        SinavOku.SinavDegExportExcel(SaveFile.FileName);
+                        break;
+                    case DialogResult.Cancel:
+                        break;
+                    case DialogResult.Abort:
+                        break;
+                    case DialogResult.Retry:
+                        break;
+                    case DialogResult.Ignore:
+                        break;
+                    case DialogResult.Yes:
+                        break;
+                    case DialogResult.No:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                Logger.WriteLine("Excel'e aktarma başlatılamadı. Liste boş!!!", Logger.LOG_TYPE.Sistem);
+            }
+        }
+
+        private void BSinavIstatistikExport_Click(object sender, EventArgs e)
+        {
+            SaveFile.Filter = "Excel|*.xlsx";
+            SaveFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if (ListSinav.Items.Count > 0)
+            {
+                switch (SaveFile.ShowDialog())
+                {
+                    case DialogResult.None:
+                        break;
+                    case DialogResult.OK:
+                        Logger.WriteLine("Excel'e aktarma başlatıldı.", Logger.LOG_TYPE.Hata);
+                        SinavOku.SinavIstExportExcel(SaveFile.FileName);
+                        break;
+                    case DialogResult.Cancel:
+                        break;
+                    case DialogResult.Abort:
+                        break;
+                    case DialogResult.Retry:
+                        break;
+                    case DialogResult.Ignore:
+                        break;
+                    case DialogResult.Yes:
+                        break;
+                    case DialogResult.No:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                Logger.WriteLine("Excel'e aktarma başlatılamadı. Liste boş!!!", Logger.LOG_TYPE.Sistem);
             }
         }
     }

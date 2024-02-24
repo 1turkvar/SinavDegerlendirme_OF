@@ -5,6 +5,7 @@
         public static MainForm mForm;
 
         public static int ToplamSoruSayisi { get; set; } = 100;
+
         public static int BirinciDersSoruSayisi { get; set; } = 100;
         public static double BirinciDersBirSoruPuan { get; set; } = 1;
 
@@ -28,30 +29,6 @@
 
         public static int SekizDersSoruSayisi { get; set; } = 0;
         public static double SekizDersBirSoruPuan { get; set; } = 0;
-
-        //public static int BirinciDersSoruSayisi { get; set; } = 100;
-        //public static int BirinciDersBirSoruPuan { get; set; } = 1;
-
-        //public static int IkinciDersSoruSayisi { get; set; } = 0;
-        //public static int IkinciDersBirSoruPuan { get; set; } = 0;
-
-        //public static int UcDersSoruSayisi { get; set; } = 0;
-        //public static int UcDersBirSoruPuan { get; set; } = 0;
-
-        //public static int DortDersSoruSayisi { get; set; } = 0;
-        //public static int DortDersBirSoruPuan { get; set; } = 0;
-
-        //public static int BesDersSoruSayisi { get; set; } = 0;
-        //public static int BesDersBirSoruPuan { get; set; } = 0;
-
-        //public static int AltiDersSoruSayisi { get; set; } = 0;
-        //public static int AltiDersBirSoruPuan { get; set; } = 0;
-
-        //public static int YediDersSoruSayisi { get; set; } = 0;
-        //public static int YediDersBirSoruPuan { get; set; } = 0;
-
-        //public static int SekizDersSoruSayisi { get; set; } = 0;
-        //public static int SekizDersBirSoruPuan { get; set; } = 0;
 
     }
 }
