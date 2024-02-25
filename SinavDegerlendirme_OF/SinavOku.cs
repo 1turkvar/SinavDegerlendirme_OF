@@ -23,6 +23,7 @@ namespace SinavDegerlendirme_OF
         public static string[] CevapAnahtariArrayList;
 
         public static int dersSayisi = 8; // Toplam ders sayısı
+        public static string[] dersOgrenciCevaplar = new string[dersSayisi];
         public static int[] dogruSayisi = new int[dersSayisi];
         public static int[] yanlisSayisi = new int[dersSayisi];
         public static int[] bosSayisi = new int[dersSayisi];
@@ -181,6 +182,7 @@ namespace SinavDegerlendirme_OF
                 {
                     for (int dersIndex = 0; dersIndex <= 7; dersIndex++)
                     {
+                        dersOgrenciCevaplar[dersIndex] = "";
                         dogruSayisi[dersIndex] = 0;
                         yanlisSayisi[dersIndex] = 0;
                         bosSayisi[dersIndex] = 0;
@@ -237,164 +239,323 @@ namespace SinavDegerlendirme_OF
 
                         if (j < Globals.BirinciDersSoruSayisi)
                         {
-                            if (OgrenciCevapAnahtari[j] != " ")
+                            if (CevapAnahtariArrayList[j] == "X")
                             {
-                                if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
-                                {
-                                    dersPuan[0] += Globals.BirinciDersBirSoruPuan;
-                                    dogruSayisi[0] += 1;
-                                }
-                                else
-                                {
-                                    yanlisSayisi[0] += 1;
-                                }
+                                dersPuan[0] += Globals.BirinciDersBirSoruPuan;
+                                dogruSayisi[0] += 1;
+                                dersOgrenciCevaplar[0] += OgrenciCevapAnahtari[j].ToUpper();
+                                Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. 5 puan verildi. (X)", Logger.LOG_TYPE.Sistem);
                             }
                             else
                             {
-                                bosSayisi[0] += 1;
+                                if (CevapAnahtariArrayList[j] == "W")
+                                {
+                                    Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. puan karşılığını kalan soru sayısı üzerinden hesaplanacaktır.Ayarları yeniden düzenlemeyi unutma! (W)", Logger.LOG_TYPE.Sistem);
+                                }
+                                else
+                                {
+                                    if (OgrenciCevapAnahtari[j] != " ")
+                                    {
+                                        if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
+                                        {
+                                            dersPuan[0] += Globals.BirinciDersBirSoruPuan;
+                                            dogruSayisi[0] += 1;
+                                            dersOgrenciCevaplar[0] += OgrenciCevapAnahtari[j].ToUpper();
+                                        }
+                                        else
+                                        {
+                                            yanlisSayisi[0] += 1;
+                                            dersOgrenciCevaplar[0] += OgrenciCevapAnahtari[j].ToLower();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        bosSayisi[0] += 1;
+                                        dersOgrenciCevaplar[0] += OgrenciCevapAnahtari[j];
+                                    }
+                                }
                             }
                         }
                         //2. Ders
                         else if (j < (Globals.BirinciDersSoruSayisi + Globals.IkinciDersSoruSayisi))
                         {
-                            if (OgrenciCevapAnahtari[j] != " ")
+                            if (CevapAnahtariArrayList[j] == "X")
                             {
-                                if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
-                                {
-                                    dersPuan[1] += Globals.IkinciDersBirSoruPuan;
-                                    dogruSayisi[1] += 1;
-                                }
-                                else
-                                {
-                                    yanlisSayisi[1] += 1;
-                                }
+                                dersPuan[1] += Globals.BirinciDersBirSoruPuan;
+                                dogruSayisi[1] += 1;
+                                dersOgrenciCevaplar[1] += OgrenciCevapAnahtari[j].ToUpper();
+                                Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. 5 puan verildi. (X)", Logger.LOG_TYPE.Sistem);
                             }
                             else
                             {
-                                bosSayisi[1] += 1;
+                                if (CevapAnahtariArrayList[j] == "W")
+                                {
+                                    Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. puan karşılığını kalan soru sayısı üzerinden hesaplanacaktır.Ayarları yeniden düzenlemeyi unutma! (W)", Logger.LOG_TYPE.Sistem);
+                                }
+                                else
+                                {
+                                    if (OgrenciCevapAnahtari[j] != " ")
+                                    {
+                                        if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
+                                        {
+                                            dersPuan[1] += Globals.IkinciDersBirSoruPuan;
+                                            dogruSayisi[1] += 1;
+                                            dersOgrenciCevaplar[1] += OgrenciCevapAnahtari[j].ToUpper();
+                                        }
+                                        else
+                                        {
+                                            yanlisSayisi[1] += 1;
+                                            dersOgrenciCevaplar[1] += OgrenciCevapAnahtari[j].ToLower();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        bosSayisi[1] += 1;
+                                        dersOgrenciCevaplar[1] += OgrenciCevapAnahtari[j];
+                                    }
+                                }
                             }
                         }
                         //3. Ders
                         else if (j < (Globals.BirinciDersSoruSayisi + Globals.IkinciDersSoruSayisi + Globals.UcDersSoruSayisi))
                         {
-                            if (OgrenciCevapAnahtari[j] != " ")
+                            if (CevapAnahtariArrayList[j] == "X")
                             {
-                                if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
-                                {
-                                    dersPuan[2] += Globals.UcDersBirSoruPuan;
-                                    dogruSayisi[2] += 1;
-                                }
-                                else
-                                {
-                                    yanlisSayisi[2] += 1;
-                                }
+                                dersPuan[2] += Globals.BirinciDersBirSoruPuan;
+                                dogruSayisi[2] += 1;
+                                dersOgrenciCevaplar[2] += OgrenciCevapAnahtari[j].ToUpper();
+                                Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. 5 puan verildi. (X)", Logger.LOG_TYPE.Sistem);
                             }
                             else
                             {
-                                bosSayisi[2] += 1;
+                                if (CevapAnahtariArrayList[j] == "W")
+                                {
+                                    Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. puan karşılığını kalan soru sayısı üzerinden hesaplanacaktır.Ayarları yeniden düzenlemeyi unutma! (W)", Logger.LOG_TYPE.Sistem);
+                                }
+                                else
+                                {
+                                    if (OgrenciCevapAnahtari[j] != " ")
+                                    {
+                                        if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
+                                        {
+                                            dersPuan[2] += Globals.UcDersBirSoruPuan;
+                                            dogruSayisi[2] += 1;
+                                            dersOgrenciCevaplar[2] += OgrenciCevapAnahtari[j].ToUpper();
+                                        }
+                                        else
+                                        {
+                                            yanlisSayisi[2] += 1;
+                                            dersOgrenciCevaplar[2] += OgrenciCevapAnahtari[j].ToLower();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        bosSayisi[2] += 1;
+                                        dersOgrenciCevaplar[2] += OgrenciCevapAnahtari[j];
+                                    }
+                                }
                             }
                         }
                         //4. Ders
                         else if (j < (Globals.BirinciDersSoruSayisi + Globals.IkinciDersSoruSayisi + Globals.UcDersSoruSayisi + Globals.DortDersSoruSayisi))
                         {
-                            if (OgrenciCevapAnahtari[j] != " ")
+                            if (CevapAnahtariArrayList[j] == "X")
                             {
-                                if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
-                                {
-                                    dersPuan[3] += Globals.DortDersBirSoruPuan;
-                                    dogruSayisi[3] += 1;
-                                }
-                                else
-                                {
-                                    yanlisSayisi[3] += 1;
-                                }
+                                dersPuan[3] += Globals.BirinciDersBirSoruPuan;
+                                dogruSayisi[3] += 1;
+                                dersOgrenciCevaplar[3] += OgrenciCevapAnahtari[j].ToUpper();
+                                Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. 5 puan verildi. (X)", Logger.LOG_TYPE.Sistem);
                             }
                             else
                             {
-                                bosSayisi[3] += 1;
+                                if (CevapAnahtariArrayList[j] == "W")
+                                {
+                                    Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. puan karşılığını kalan soru sayısı üzerinden hesaplanacaktır.Ayarları yeniden düzenlemeyi unutma! (W)", Logger.LOG_TYPE.Sistem);
+                                }
+                                else
+                                {
+                                    if (OgrenciCevapAnahtari[j] != " ")
+                                    {
+                                        if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
+                                        {
+                                            dersPuan[3] += Globals.DortDersBirSoruPuan;
+                                            dogruSayisi[3] += 1;
+                                            dersOgrenciCevaplar[3] += OgrenciCevapAnahtari[j].ToUpper();
+                                        }
+                                        else
+                                        {
+                                            yanlisSayisi[3] += 1;
+                                            dersOgrenciCevaplar[3] += OgrenciCevapAnahtari[j].ToLower();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        bosSayisi[3] += 1;
+                                        dersOgrenciCevaplar[3] += OgrenciCevapAnahtari[j];
+                                    }
+                                }
                             }
                         }
                         //5. Ders
                         else if (j < (Globals.BirinciDersSoruSayisi + Globals.IkinciDersSoruSayisi + Globals.UcDersSoruSayisi + Globals.DortDersSoruSayisi + Globals.BesDersSoruSayisi))
                         {
-                            if (OgrenciCevapAnahtari[j] != " ")
+                            if (CevapAnahtariArrayList[j] == "X")
                             {
-                                if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
-                                {
-                                    dersPuan[4] += Globals.BesDersBirSoruPuan;
-                                    dogruSayisi[4] += 1;
-                                }
-                                else
-                                {
-                                    yanlisSayisi[4] += 1;
-                                }
+                                dersPuan[4] += Globals.BirinciDersBirSoruPuan;
+                                dogruSayisi[4] += 1;
+                                dersOgrenciCevaplar[4] += OgrenciCevapAnahtari[j].ToUpper();
+                                Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. 5 puan verildi. (X)", Logger.LOG_TYPE.Sistem);
                             }
                             else
                             {
-                                bosSayisi[4] += 1;
+                                if (CevapAnahtariArrayList[j] == "W")
+                                {
+                                    Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. puan karşılığını kalan soru sayısı üzerinden hesaplanacaktır.Ayarları yeniden düzenlemeyi unutma! (W)", Logger.LOG_TYPE.Sistem);
+                                }
+                                else
+                                {
+                                    if (OgrenciCevapAnahtari[j] != " ")
+                                    {
+                                        if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
+                                        {
+                                            dersPuan[4] += Globals.BesDersBirSoruPuan;
+                                            dogruSayisi[4] += 1;
+                                            dersOgrenciCevaplar[4] += OgrenciCevapAnahtari[j].ToUpper();
+                                        }
+                                        else
+                                        {
+                                            yanlisSayisi[4] += 1;
+                                            dersOgrenciCevaplar[4] += OgrenciCevapAnahtari[j].ToLower();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        bosSayisi[4] += 1;
+                                        dersOgrenciCevaplar[4] += OgrenciCevapAnahtari[j];
+                                    }
+                                }
                             }
                         }
                         //6. Ders
                         else if (j < (Globals.BirinciDersSoruSayisi + Globals.IkinciDersSoruSayisi + Globals.UcDersSoruSayisi + Globals.DortDersSoruSayisi + Globals.BesDersSoruSayisi + Globals.AltiDersSoruSayisi))
                         {
-                            if (OgrenciCevapAnahtari[j] != " ")
+                            if (CevapAnahtariArrayList[j] == "X")
                             {
-                                if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
-                                {
-                                    dersPuan[5] += Globals.AltiDersBirSoruPuan;
-                                    dogruSayisi[5] += 1;
-                                }
-                                else
-                                {
-                                    yanlisSayisi[5] += 1;
-                                }
+                                dersPuan[5] += Globals.BirinciDersBirSoruPuan;
+                                dogruSayisi[5] += 1;
+                                dersOgrenciCevaplar[5] += OgrenciCevapAnahtari[j].ToUpper();
+                                Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. 5 puan verildi. (X)", Logger.LOG_TYPE.Sistem);
                             }
                             else
                             {
-                                bosSayisi[5] += 1;
+                                if (CevapAnahtariArrayList[j] == "W")
+                                {
+                                    Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. puan karşılığını kalan soru sayısı üzerinden hesaplanacaktır.Ayarları yeniden düzenlemeyi unutma! (W)", Logger.LOG_TYPE.Sistem);
+                                }
+                                else
+                                {
+                                    if (OgrenciCevapAnahtari[j] != " ")
+                                    {
+                                        if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
+                                        {
+                                            dersPuan[5] += Globals.AltiDersBirSoruPuan;
+                                            dogruSayisi[5] += 1;
+                                            dersOgrenciCevaplar[5] += OgrenciCevapAnahtari[j].ToUpper();
+                                        }
+                                        else
+                                        {
+                                            yanlisSayisi[5] += 1;
+                                            dersOgrenciCevaplar[5] += OgrenciCevapAnahtari[j].ToLower();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        bosSayisi[5] += 1;
+                                        dersOgrenciCevaplar[5] += OgrenciCevapAnahtari[j];
+                                    }
+                                }
                             }
                         }
                         //7. Ders
                         else if (j < (Globals.BirinciDersSoruSayisi + Globals.IkinciDersSoruSayisi + Globals.UcDersSoruSayisi + Globals.DortDersSoruSayisi + Globals.BesDersSoruSayisi + Globals.AltiDersSoruSayisi + Globals.YediDersSoruSayisi))
                         {
-                            if (OgrenciCevapAnahtari[j] != " ")
+                            if (CevapAnahtariArrayList[j] == "X")
                             {
-                                if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
-                                {
-                                    dersPuan[6] += Globals.YediDersBirSoruPuan;
-                                    dogruSayisi[6] += 1;
-                                }
-                                else
-                                {
-                                    yanlisSayisi[6] += 1;
-                                }
+                                dersPuan[6] += Globals.BirinciDersBirSoruPuan;
+                                dogruSayisi[6] += 1;
+                                dersOgrenciCevaplar[6] += OgrenciCevapAnahtari[j].ToUpper();
+                                Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. 5 puan verildi. (X)", Logger.LOG_TYPE.Sistem);
                             }
                             else
                             {
-                                bosSayisi[6] += 1;
+                                if (CevapAnahtariArrayList[j] == "W")
+                                {
+                                    Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. puan karşılığını kalan soru sayısı üzerinden hesaplanacaktır.Ayarları yeniden düzenlemeyi unutma! (W)", Logger.LOG_TYPE.Sistem);
+                                }
+                                else
+                                {
+                                    if (OgrenciCevapAnahtari[j] != " ")
+                                    {
+                                        if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
+                                        {
+                                            dersPuan[6] += Globals.YediDersBirSoruPuan;
+                                            dogruSayisi[6] += 1;
+                                            dersOgrenciCevaplar[6] += OgrenciCevapAnahtari[j].ToUpper();
+                                        }
+                                        else
+                                        {
+                                            yanlisSayisi[6] += 1;
+                                            dersOgrenciCevaplar[6] += OgrenciCevapAnahtari[j].ToLower();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        bosSayisi[6] += 1;
+                                        dersOgrenciCevaplar[6] += OgrenciCevapAnahtari[j];
+                                    }
+                                }
                             }
                         }
                         //8. Ders
                         else if (j < (Globals.BirinciDersSoruSayisi + Globals.IkinciDersSoruSayisi + Globals.UcDersSoruSayisi + Globals.DortDersSoruSayisi + Globals.BesDersSoruSayisi + Globals.AltiDersSoruSayisi + Globals.YediDersSoruSayisi + Globals.SekizDersSoruSayisi))
                         {
-                            if (OgrenciCevapAnahtari[j] != " ")
+                            if (CevapAnahtariArrayList[j] == "X")
                             {
-                                if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
-                                {
-                                    dersPuan[7] += Globals.SekizDersBirSoruPuan;
-                                    dogruSayisi[7] += 1;
-                                }
-                                else
-                                {
-                                    yanlisSayisi[7] += 1;
-                                }
+                                dersPuan[7] += Globals.BirinciDersBirSoruPuan;
+                                dogruSayisi[7] += 1;
+                                dersOgrenciCevaplar[7] += OgrenciCevapAnahtari[j].ToUpper();
+                                Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. 5 puan verildi. (X)", Logger.LOG_TYPE.Sistem);
                             }
                             else
                             {
-                                bosSayisi[7] += 1;
+                                if (CevapAnahtariArrayList[j] == "W")
+                                {
+                                    Logger.WriteLine((j + 1).ToString() + " . soru iptal edildi. puan karşılığını kalan soru sayısı üzerinden hesaplanacaktır.Ayarları yeniden düzenlemeyi unutma! (W)", Logger.LOG_TYPE.Sistem);
+                                }
+                                else
+                                {
+                                    if (OgrenciCevapAnahtari[j] != " ")
+                                    {
+                                        if (OgrenciCevapAnahtari[j] == CevapAnahtariArrayList[j])
+                                        {
+                                            dersPuan[7] += Globals.SekizDersBirSoruPuan;
+                                            dogruSayisi[7] += 1;
+                                            dersOgrenciCevaplar[7] += OgrenciCevapAnahtari[j].ToUpper();
+                                        }
+                                        else
+                                        {
+                                            yanlisSayisi[7] += 1;
+                                            dersOgrenciCevaplar[7] += OgrenciCevapAnahtari[j].ToLower();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        bosSayisi[7] += 1;
+                                        dersOgrenciCevaplar[7] += OgrenciCevapAnahtari[j];
+                                    }
+                                }
                             }
                         }
-
                     }
 
                     ListViewItem itemSinavSonuc = new ListViewItem(OgrenciSinavInfoList[i].Ad);
@@ -412,6 +573,7 @@ namespace SinavDegerlendirme_OF
                         itemSinavSonuc.SubItems.Add(yanlisSayisi[drsIndex].ToString());
                         itemSinavSonuc.SubItems.Add(bosSayisi[drsIndex].ToString());
                         itemSinavSonuc.SubItems.Add(dersPuan[drsIndex].ToString());
+                        itemSinavSonuc.SubItems.Add(dersOgrenciCevaplar[drsIndex]);
                     }
                     Globals.mForm.ListSinav.Items.Add(itemSinavSonuc);
                 }
@@ -506,7 +668,6 @@ namespace SinavDegerlendirme_OF
             catch (Exception ex)
             {
                 Logger.WriteLine("Sınav değerlendirme işlemlerinde hata: " + ex.Message, Logger.LOG_TYPE.Hata);
-
                 return false;
             }
         }
@@ -541,41 +702,49 @@ namespace SinavDegerlendirme_OF
             ws.Cells[1, 10] = "Birinci Ders Yanlış";
             ws.Cells[1, 11] = "Birinci Ders Boş";
             ws.Cells[1, 12] = "Birinci Ders Sınav Puanı";
+            ws.Cells[1, 13] = "Birinci Ders Öğrenci Cevap Anahtarı";
 
-            ws.Cells[1, 13] = "İkinci Ders Doğru";
-            ws.Cells[1, 14] = "İkinci Ders Yanlış";
-            ws.Cells[1, 15] = "İkinci Ders Boş";
-            ws.Cells[1, 16] = "İkinci Ders Sınav Puanı";
+            ws.Cells[1, 14] = "İkinci Ders Doğru";
+            ws.Cells[1, 15] = "İkinci Ders Yanlış";
+            ws.Cells[1, 16] = "İkinci Ders Boş";
+            ws.Cells[1, 17] = "İkinci Ders Sınav Puanı";
+            ws.Cells[1, 18] = "İkinci Ders Öğrenci Cevap Anahtarı";
 
-            ws.Cells[1, 17] = "Üçüncü Ders Doğru";
-            ws.Cells[1, 18] = "Üçüncü Ders Yanlış";
-            ws.Cells[1, 19] = "Üçüncü Ders Boş";
-            ws.Cells[1, 20] = "Üçüncü Ders Sınav Puanı";
+            ws.Cells[1, 19] = "Üçüncü Ders Doğru";
+            ws.Cells[1, 20] = "Üçüncü Ders Yanlış";
+            ws.Cells[1, 21] = "Üçüncü Ders Boş";
+            ws.Cells[1, 22] = "Üçüncü Ders Sınav Puanı";
+            ws.Cells[1, 23] = "Üçüncü Ders Öğrenci Cevap Anahtarı";
 
-            ws.Cells[1, 21] = "Dördüncü Ders Doğru";
-            ws.Cells[1, 22] = "Dördüncü Ders Yanlış";
-            ws.Cells[1, 23] = "Dördüncü Ders Boş";
-            ws.Cells[1, 24] = "Dördüncü Ders Sınav Puanı";
+            ws.Cells[1, 24] = "Dördüncü Ders Doğru";
+            ws.Cells[1, 25] = "Dördüncü Ders Yanlış";
+            ws.Cells[1, 26] = "Dördüncü Ders Boş";
+            ws.Cells[1, 27] = "Dördüncü Ders Sınav Puanı";
+            ws.Cells[1, 28] = "Dördüncü Ders Öğrenci Cevap Anahtarı";
 
-            ws.Cells[1, 25] = "Beşinci Ders Doğru";
-            ws.Cells[1, 26] = "Beşinci Ders Yanlış";
-            ws.Cells[1, 27] = "Beşinci Ders Boş";
-            ws.Cells[1, 28] = "Beşinci Ders Sınav Puanı";
+            ws.Cells[1, 29] = "Beşinci Ders Doğru";
+            ws.Cells[1, 30] = "Beşinci Ders Yanlış";
+            ws.Cells[1, 31] = "Beşinci Ders Boş";
+            ws.Cells[1, 32] = "Beşinci Ders Sınav Puanı";
+            ws.Cells[1, 33] = "Beşinci Ders Öğrenci Cevap Anahtarı";
 
-            ws.Cells[1, 29] = "Altıncı Ders Doğru";
-            ws.Cells[1, 30] = "Altıncı Ders Yanlış";
-            ws.Cells[1, 31] = "Altıncı Ders Boş";
-            ws.Cells[1, 32] = "Altıncı Ders Sınav Puanı";
+            ws.Cells[1, 34] = "Altıncı Ders Doğru";
+            ws.Cells[1, 35] = "Altıncı Ders Yanlış";
+            ws.Cells[1, 36] = "Altıncı Ders Boş";
+            ws.Cells[1, 37] = "Altıncı Ders Sınav Puanı";
+            ws.Cells[1, 38] = "Altıncı Ders Öğrenci Cevap Anahtarı";
 
-            ws.Cells[1, 33] = "Yedinci Ders Doğru";
-            ws.Cells[1, 34] = "Yedinci Ders Yanlış";
-            ws.Cells[1, 35] = "Yedinci Ders Boş";
-            ws.Cells[1, 36] = "Yedinci Ders Sınav Puanı";
+            ws.Cells[1, 39] = "Yedinci Ders Doğru";
+            ws.Cells[1, 40] = "Yedinci Ders Yanlış";
+            ws.Cells[1, 41] = "Yedinci Ders Boş";
+            ws.Cells[1, 42] = "Yedinci Ders Sınav Puanı";
+            ws.Cells[1, 43] = "Yedinci Ders Öğrenci Cevap Anahtarı";
 
-            ws.Cells[1, 37] = "Sekizinci Ders Doğru";
-            ws.Cells[1, 38] = "Sekizinci Ders Yanlış";
-            ws.Cells[1, 39] = "Sekizinci Ders Boş";
-            ws.Cells[1, 40] = "Sekizinci Ders Sınav Puanı";
+            ws.Cells[1, 44] = "Sekizinci Ders Doğru";
+            ws.Cells[1, 45] = "Sekizinci Ders Yanlış";
+            ws.Cells[1, 46] = "Sekizinci Ders Boş";
+            ws.Cells[1, 47] = "Sekizinci Ders Sınav Puanı";
+            ws.Cells[1, 48] = "Sekizinci Ders Öğrenci Cevap Anahtarı";
 
             Globals.mForm.lTopWorkS.Text = Globals.mForm.ListSinav.Items.Count.ToString();
 

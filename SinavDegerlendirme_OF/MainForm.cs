@@ -1,5 +1,6 @@
 ﻿using MaterialSkin.Controls;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace SinavDegerlendirme_OF
@@ -42,21 +43,37 @@ namespace SinavDegerlendirme_OF
             Globals.SekizDersSoruSayisi = Convert.ToInt32(tSekizDSoruSayisi.Text);
             Globals.SekizDersBirSoruPuan = Convert.ToDouble(tSekizDSoruPuan.Text);
 
+
+
             lTextInfo.Text = "1 / " + Globals.ToplamSoruSayisi.ToString();
 
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             Globals.mForm = this;
 
-            Settings();
             Logger.WriteLine("Güncelleme durumunu: https://github.com/1turkvar/SinavDegerlendirme_OF sayfasından, Releases bölümünden takip edebilirsiniz.", Logger.LOG_TYPE.Bilgi);
             Logger.WriteLine("Soru sayısı, Soru karşılığı puan ve Cevap anahtarını ayarlamayı unutmayınız!", Logger.LOG_TYPE.Bilgi);
             Logger.WriteLine("Sınav değerlendirmesi yapmanız için ayarları yapıp, ayarları kaydet butonuna basmanız gerekmektedir.", Logger.LOG_TYPE.Bilgi);
 
+            //Config.LoadConfig();
+        }
 
+        private void SaveIniFile()
+        {
+            try
+            {
+                IniFiles myIni = new IniFiles(Application.StartupPath + "\\settings.ini");
+                //İmza
+                myIni.Write("SinavDegerlendirme_OF", "ToplamSoru", tToplamSoruSayisi.Text);
+
+                Logger.WriteLine("Ayarlar dosyaya kaydedildi.", Logger.LOG_TYPE.Sistem);
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLine("Ini file'da hata :" + ex.Message, Logger.LOG_TYPE.Sistem);
+            }
         }
 
         private void BDegerlendir_Click(object sender, EventArgs e)
@@ -129,15 +146,16 @@ namespace SinavDegerlendirme_OF
 
         private void BSettings_Click(object sender, EventArgs e)
         {
-            if(tCevapAnahtari.Text != "")
-            {
-                Settings();
-                Logger.WriteLine("Ayarlar kaydedildi!", Logger.LOG_TYPE.Sistem);
-            }
-            else
-            {
-                Logger.WriteLine("Cevap anahtarı kısmı boş!", Logger.LOG_TYPE.Hata);
-            }
+            SaveIniFile();
+            //if(tCevapAnahtari.Text != "")
+            //{
+            Settings();
+            Logger.WriteLine("Ayarlar kaydedildi!", Logger.LOG_TYPE.Sistem);
+            //}
+            //else
+            //{
+            //    Logger.WriteLine("Cevap anahtarı kısmı boş!", Logger.LOG_TYPE.Hata);
+            //}
 
         }
 
@@ -207,7 +225,7 @@ namespace SinavDegerlendirme_OF
                     case DialogResult.None:
                         break;
                     case DialogResult.OK:
-                        Logger.WriteLine("Excel'e aktarma başlatıldı.", Logger.LOG_TYPE.Hata);
+                        Logger.WriteLine("Excel'e aktarma başlatıldı.", Logger.LOG_TYPE.Sistem);
                         SinavOku.SinavDegExportExcel(SaveFile.FileName);
                         break;
                     case DialogResult.Cancel:
@@ -243,7 +261,7 @@ namespace SinavDegerlendirme_OF
                     case DialogResult.None:
                         break;
                     case DialogResult.OK:
-                        Logger.WriteLine("Excel'e aktarma başlatıldı.", Logger.LOG_TYPE.Hata);
+                        Logger.WriteLine("Excel'e aktarma başlatıldı.", Logger.LOG_TYPE.Sistem);
                         SinavOku.SinavIstExportExcel(SaveFile.FileName);
                         break;
                     case DialogResult.Cancel:
@@ -266,6 +284,12 @@ namespace SinavDegerlendirme_OF
             {
                 Logger.WriteLine("Excel'e aktarma başlatılamadı. Liste boş!!!", Logger.LOG_TYPE.Sistem);
             }
+        }
+
+        private void BIptalSoruInfo_Click(object sender, EventArgs e)
+        {
+            Logger.WriteLine("Herkese 5 puan vermek için soru karşılığı cevap anahtarına 'X' harfi girmeniz gerkmektedir. (Doğru işaretleme yapan 5 puan almıştı. Yanlış ve boş işaretleme yapanlara 5 puan verir.) ", Logger.LOG_TYPE.Bilgi);
+            Logger.WriteLine("Soruyu iptal edip kalan soru sayısına göre hesaplama yapmak için iptal edilen soru karşılığı cevap anahtarına 'W' harfi girmeniz gerekmektedir. Soru karşılığı puan hesaplamasını kalan soru adetine göre ayarlanıp değerlendirme yapılır.", Logger.LOG_TYPE.Bilgi);
         }
     }
 }

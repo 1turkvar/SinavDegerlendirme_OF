@@ -60,34 +60,42 @@
             this.cBirDYanlisS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cBirDBosS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cBirDSinavPuan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cBirDOgrCevap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cIkiDDogruS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cIkiDYanlisS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cIkiDBosS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cIkiDSinavPuan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cIkiDOgrCevap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cUcDDogruS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cUcDYanlisS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cUcDBosS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cUcDSinavPuan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cUcuncuDOgrCevap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cDortDDogruS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cDortDYanlisS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cDortDBosS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cDortDSinavPuan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cDortDOgrCevap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cBesDDogruS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cBesDYanlisS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cBesDBosS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cBesDSinavPuan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cBesDOgrCevap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cAltiDDogruS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cAltiDYanlisS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cAltiDBosS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cAltiDSinavPuan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cAltiDOgrCevap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cYediDDogruS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cYediDYanlisS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cYediDBosS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cYediDSinavPuan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cYediDOgrCevap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSekizDDogruS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSekizDYanlisS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSekizDBosS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSekizDSinavPuan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cSekizDOgrCevap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BExportSinavDegExcel = new MaterialSkin.Controls.MaterialButton();
             this.SaveFile = new System.Windows.Forms.SaveFileDialog();
             this.lWorkS = new MaterialSkin.Controls.MaterialLabel();
@@ -138,6 +146,7 @@
             this.ZorlukDerece = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ZorlukDereceYuzde = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BSinavIstatistikExport = new MaterialSkin.Controls.MaterialButton();
+            this.BIptalSoruInfo = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,7 +164,7 @@
             this.bDegerlendir.MouseState = MaterialSkin.MouseState.HOVER;
             this.bDegerlendir.Name = "bDegerlendir";
             this.bDegerlendir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.bDegerlendir.Size = new System.Drawing.Size(328, 32);
+            this.bDegerlendir.Size = new System.Drawing.Size(164, 32);
             this.bDegerlendir.TabIndex = 0;
             this.bDegerlendir.Text = "Sınav Değerlendir";
             this.bDegerlendir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -174,9 +183,9 @@
             this.LogList.FullRowSelect = true;
             this.LogList.GridLines = true;
             this.LogList.HideSelection = false;
-            this.LogList.Location = new System.Drawing.Point(3, 825);
+            this.LogList.Location = new System.Drawing.Point(3, 831);
             this.LogList.Name = "LogList";
-            this.LogList.Size = new System.Drawing.Size(1824, 106);
+            this.LogList.Size = new System.Drawing.Size(1824, 100);
             this.LogList.TabIndex = 2;
             this.LogList.UseCompatibleStateImageBehavior = false;
             this.LogList.View = System.Windows.Forms.View.Details;
@@ -278,34 +287,42 @@
             this.cBirDYanlisS,
             this.cBirDBosS,
             this.cBirDSinavPuan,
+            this.cBirDOgrCevap,
             this.cIkiDDogruS,
             this.cIkiDYanlisS,
             this.cIkiDBosS,
             this.cIkiDSinavPuan,
+            this.cIkiDOgrCevap,
             this.cUcDDogruS,
             this.cUcDYanlisS,
             this.cUcDBosS,
             this.cUcDSinavPuan,
+            this.cUcuncuDOgrCevap,
             this.cDortDDogruS,
             this.cDortDYanlisS,
             this.cDortDBosS,
             this.cDortDSinavPuan,
+            this.cDortDOgrCevap,
             this.cBesDDogruS,
             this.cBesDYanlisS,
             this.cBesDBosS,
             this.cBesDSinavPuan,
+            this.cBesDOgrCevap,
             this.cAltiDDogruS,
             this.cAltiDYanlisS,
             this.cAltiDBosS,
             this.cAltiDSinavPuan,
+            this.cAltiDOgrCevap,
             this.cYediDDogruS,
             this.cYediDYanlisS,
             this.cYediDBosS,
             this.cYediDSinavPuan,
+            this.cYediDOgrCevap,
             this.cSekizDDogruS,
             this.cSekizDYanlisS,
             this.cSekizDBosS,
-            this.cSekizDSinavPuan});
+            this.cSekizDSinavPuan,
+            this.cSekizDOgrCevap});
             this.ListSinav.FullRowSelect = true;
             this.ListSinav.GridLines = true;
             this.ListSinav.HideSelection = false;
@@ -376,6 +393,10 @@
             this.cBirDSinavPuan.Text = "1. Ders Sınav Puan";
             this.cBirDSinavPuan.Width = 80;
             // 
+            // cBirDOgrCevap
+            // 
+            this.cBirDOgrCevap.Text = "1. Ders Öğrenci Cevapları";
+            // 
             // cIkiDDogruS
             // 
             this.cIkiDDogruS.Text = "2. Ders Doğru";
@@ -395,6 +416,10 @@
             // 
             this.cIkiDSinavPuan.Text = "2. Ders Sınav Puan";
             this.cIkiDSinavPuan.Width = 80;
+            // 
+            // cIkiDOgrCevap
+            // 
+            this.cIkiDOgrCevap.Text = "2. Ders Öğrenci Cevapları";
             // 
             // cUcDDogruS
             // 
@@ -416,6 +441,10 @@
             this.cUcDSinavPuan.Text = "3. Ders Sınav Puan";
             this.cUcDSinavPuan.Width = 80;
             // 
+            // cUcuncuDOgrCevap
+            // 
+            this.cUcuncuDOgrCevap.Text = "3. Ders Öğrenci Cevapları";
+            // 
             // cDortDDogruS
             // 
             this.cDortDDogruS.Text = "4. Ders Doğru";
@@ -435,6 +464,10 @@
             // 
             this.cDortDSinavPuan.Text = "4. Ders Sınav Puan";
             this.cDortDSinavPuan.Width = 80;
+            // 
+            // cDortDOgrCevap
+            // 
+            this.cDortDOgrCevap.Text = "4. Ders Öğrenci Cevapları";
             // 
             // cBesDDogruS
             // 
@@ -456,6 +489,10 @@
             this.cBesDSinavPuan.Text = "5. Ders Sınav Puan";
             this.cBesDSinavPuan.Width = 80;
             // 
+            // cBesDOgrCevap
+            // 
+            this.cBesDOgrCevap.Text = "5. Ders Öğrenci Cevapları";
+            // 
             // cAltiDDogruS
             // 
             this.cAltiDDogruS.Text = "6. Ders Doğru";
@@ -475,6 +512,10 @@
             // 
             this.cAltiDSinavPuan.Text = "6. Ders Sınav Puan";
             this.cAltiDSinavPuan.Width = 80;
+            // 
+            // cAltiDOgrCevap
+            // 
+            this.cAltiDOgrCevap.Text = "6. Ders Öğrenci Cevapları";
             // 
             // cYediDDogruS
             // 
@@ -496,6 +537,10 @@
             this.cYediDSinavPuan.Text = "7. Ders Sınav Puan";
             this.cYediDSinavPuan.Width = 80;
             // 
+            // cYediDOgrCevap
+            // 
+            this.cYediDOgrCevap.Text = "7. Ders Öğrenci Cevapları";
+            // 
             // cSekizDDogruS
             // 
             this.cSekizDDogruS.Text = "8. Ders Doğru";
@@ -515,6 +560,10 @@
             // 
             this.cSekizDSinavPuan.Text = "8. Ders Sınav Puan";
             this.cSekizDSinavPuan.Width = 80;
+            // 
+            // cSekizDOgrCevap
+            // 
+            this.cSekizDOgrCevap.Text = "8. Ders Öğrenci Cevapları";
             // 
             // BExportSinavDegExcel
             // 
@@ -598,7 +647,7 @@
             this.tBirDSoruSayisi.Size = new System.Drawing.Size(173, 48);
             this.tBirDSoruSayisi.TabIndex = 9;
             this.tBirDSoruSayisi.TabStop = false;
-            this.tBirDSoruSayisi.Text = "100";
+            this.tBirDSoruSayisi.Text = "20";
             this.tBirDSoruSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tBirDSoruSayisi.TrailingIcon = null;
             this.tBirDSoruSayisi.UseSystemPasswordChar = false;
@@ -628,7 +677,7 @@
             this.tBirDSoruPuan.Size = new System.Drawing.Size(149, 48);
             this.tBirDSoruPuan.TabIndex = 10;
             this.tBirDSoruPuan.TabStop = false;
-            this.tBirDSoruPuan.Text = "1";
+            this.tBirDSoruPuan.Text = "5";
             this.tBirDSoruPuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tBirDSoruPuan.TrailingIcon = null;
             this.tBirDSoruPuan.UseSystemPasswordChar = false;
@@ -641,12 +690,12 @@
             this.bSettings.Depth = 0;
             this.bSettings.HighEmphasis = true;
             this.bSettings.Icon = null;
-            this.bSettings.Location = new System.Drawing.Point(7, 556);
+            this.bSettings.Location = new System.Drawing.Point(6, 556);
             this.bSettings.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bSettings.MouseState = MaterialSkin.MouseState.HOVER;
             this.bSettings.Name = "bSettings";
             this.bSettings.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.bSettings.Size = new System.Drawing.Size(328, 32);
+            this.bSettings.Size = new System.Drawing.Size(330, 32);
             this.bSettings.TabIndex = 11;
             this.bSettings.Text = "Ayarları Kaydet";
             this.bSettings.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -709,7 +758,7 @@
             this.tIkiDSoruPuan.Size = new System.Drawing.Size(149, 48);
             this.tIkiDSoruPuan.TabIndex = 14;
             this.tIkiDSoruPuan.TabStop = false;
-            this.tIkiDSoruPuan.Text = "0";
+            this.tIkiDSoruPuan.Text = "5";
             this.tIkiDSoruPuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tIkiDSoruPuan.TrailingIcon = null;
             this.tIkiDSoruPuan.UseSystemPasswordChar = false;
@@ -739,7 +788,7 @@
             this.tIkiDSoruSayisi.Size = new System.Drawing.Size(173, 48);
             this.tIkiDSoruSayisi.TabIndex = 13;
             this.tIkiDSoruSayisi.TabStop = false;
-            this.tIkiDSoruSayisi.Text = "0";
+            this.tIkiDSoruSayisi.Text = "20";
             this.tIkiDSoruSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tIkiDSoruSayisi.TrailingIcon = null;
             this.tIkiDSoruSayisi.UseSystemPasswordChar = false;
@@ -769,7 +818,7 @@
             this.tUcDSoruPuan.Size = new System.Drawing.Size(149, 48);
             this.tUcDSoruPuan.TabIndex = 16;
             this.tUcDSoruPuan.TabStop = false;
-            this.tUcDSoruPuan.Text = "0";
+            this.tUcDSoruPuan.Text = "6,67";
             this.tUcDSoruPuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tUcDSoruPuan.TrailingIcon = null;
             this.tUcDSoruPuan.UseSystemPasswordChar = false;
@@ -799,7 +848,7 @@
             this.tUcDSoruSayisi.Size = new System.Drawing.Size(173, 48);
             this.tUcDSoruSayisi.TabIndex = 15;
             this.tUcDSoruSayisi.TabStop = false;
-            this.tUcDSoruSayisi.Text = "0";
+            this.tUcDSoruSayisi.Text = "15";
             this.tUcDSoruSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tUcDSoruSayisi.TrailingIcon = null;
             this.tUcDSoruSayisi.UseSystemPasswordChar = false;
@@ -829,7 +878,7 @@
             this.tDortDSoruPuan.Size = new System.Drawing.Size(149, 48);
             this.tDortDSoruPuan.TabIndex = 18;
             this.tDortDSoruPuan.TabStop = false;
-            this.tDortDSoruPuan.Text = "0";
+            this.tDortDSoruPuan.Text = "6,67";
             this.tDortDSoruPuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tDortDSoruPuan.TrailingIcon = null;
             this.tDortDSoruPuan.UseSystemPasswordChar = false;
@@ -859,7 +908,7 @@
             this.tDortDSoruSayisi.Size = new System.Drawing.Size(173, 48);
             this.tDortDSoruSayisi.TabIndex = 17;
             this.tDortDSoruSayisi.TabStop = false;
-            this.tDortDSoruSayisi.Text = "0";
+            this.tDortDSoruSayisi.Text = "15";
             this.tDortDSoruSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tDortDSoruSayisi.TrailingIcon = null;
             this.tDortDSoruSayisi.UseSystemPasswordChar = false;
@@ -889,7 +938,7 @@
             this.tBesDSoruPuan.Size = new System.Drawing.Size(149, 48);
             this.tBesDSoruPuan.TabIndex = 20;
             this.tBesDSoruPuan.TabStop = false;
-            this.tBesDSoruPuan.Text = "0";
+            this.tBesDSoruPuan.Text = "6,67";
             this.tBesDSoruPuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tBesDSoruPuan.TrailingIcon = null;
             this.tBesDSoruPuan.UseSystemPasswordChar = false;
@@ -919,7 +968,7 @@
             this.tBesDSoruSayisi.Size = new System.Drawing.Size(173, 48);
             this.tBesDSoruSayisi.TabIndex = 19;
             this.tBesDSoruSayisi.TabStop = false;
-            this.tBesDSoruSayisi.Text = "0";
+            this.tBesDSoruSayisi.Text = "15";
             this.tBesDSoruSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tBesDSoruSayisi.TrailingIcon = null;
             this.tBesDSoruSayisi.UseSystemPasswordChar = false;
@@ -949,7 +998,7 @@
             this.tAltiDSoruPuan.Size = new System.Drawing.Size(149, 48);
             this.tAltiDSoruPuan.TabIndex = 22;
             this.tAltiDSoruPuan.TabStop = false;
-            this.tAltiDSoruPuan.Text = "0";
+            this.tAltiDSoruPuan.Text = "6,67";
             this.tAltiDSoruPuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tAltiDSoruPuan.TrailingIcon = null;
             this.tAltiDSoruPuan.UseSystemPasswordChar = false;
@@ -979,7 +1028,7 @@
             this.tAltiDSoruSayisi.Size = new System.Drawing.Size(173, 48);
             this.tAltiDSoruSayisi.TabIndex = 21;
             this.tAltiDSoruSayisi.TabStop = false;
-            this.tAltiDSoruSayisi.Text = "0";
+            this.tAltiDSoruSayisi.Text = "15";
             this.tAltiDSoruSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tAltiDSoruSayisi.TrailingIcon = null;
             this.tAltiDSoruSayisi.UseSystemPasswordChar = false;
@@ -1302,11 +1351,33 @@
             this.BSinavIstatistikExport.UseVisualStyleBackColor = true;
             this.BSinavIstatistikExport.Click += new System.EventHandler(this.BSinavIstatistikExport_Click);
             // 
+            // BIptalSoruInfo
+            // 
+            this.BIptalSoruInfo.AutoSize = false;
+            this.BIptalSoruInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BIptalSoruInfo.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BIptalSoruInfo.Depth = 0;
+            this.BIptalSoruInfo.HighEmphasis = true;
+            this.BIptalSoruInfo.Icon = null;
+            this.BIptalSoruInfo.Location = new System.Drawing.Point(180, 654);
+            this.BIptalSoruInfo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BIptalSoruInfo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BIptalSoruInfo.Name = "BIptalSoruInfo";
+            this.BIptalSoruInfo.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BIptalSoruInfo.Size = new System.Drawing.Size(156, 32);
+            this.BIptalSoruInfo.TabIndex = 33;
+            this.BIptalSoruInfo.Text = "SORU İPTALİ HAKKINDA BİLGİ";
+            this.BIptalSoruInfo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.BIptalSoruInfo.UseAccentColor = true;
+            this.BIptalSoruInfo.UseVisualStyleBackColor = true;
+            this.BIptalSoruInfo.Click += new System.EventHandler(this.BIptalSoruInfo_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1830, 934);
+            this.Controls.Add(this.BIptalSoruInfo);
             this.Controls.Add(this.BSinavIstatistikExport);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label2);
@@ -1391,7 +1462,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 tBirDSoruSayisi;
         private MaterialSkin.Controls.MaterialTextBox2 tBirDSoruPuan;
         private MaterialSkin.Controls.MaterialButton bSettings;
-        private MaterialSkin.Controls.MaterialTextBox2 tToplamSoruSayisi;
         private System.Windows.Forms.ColumnHeader cIkiDYanlisS;
         private System.Windows.Forms.ColumnHeader cIkiDBosS;
         private System.Windows.Forms.ColumnHeader cIkiDSinavPuan;
@@ -1461,6 +1531,16 @@
         private System.Windows.Forms.ColumnHeader YanlisYuzde;
         private System.Windows.Forms.ColumnHeader ZorlukDerece;
         private System.Windows.Forms.ColumnHeader ZorlukDereceYuzde;
+        public MaterialSkin.Controls.MaterialTextBox2 tToplamSoruSayisi;
+        private System.Windows.Forms.ColumnHeader cBirDOgrCevap;
+        private System.Windows.Forms.ColumnHeader cIkiDOgrCevap;
+        private System.Windows.Forms.ColumnHeader cUcuncuDOgrCevap;
+        private System.Windows.Forms.ColumnHeader cDortDOgrCevap;
+        private System.Windows.Forms.ColumnHeader cBesDOgrCevap;
+        private System.Windows.Forms.ColumnHeader cAltiDOgrCevap;
+        private System.Windows.Forms.ColumnHeader cYediDOgrCevap;
+        private System.Windows.Forms.ColumnHeader cSekizDOgrCevap;
+        private MaterialSkin.Controls.MaterialButton BIptalSoruInfo;
     }
 }
 

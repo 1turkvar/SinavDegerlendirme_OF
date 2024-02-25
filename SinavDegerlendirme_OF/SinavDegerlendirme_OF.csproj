@@ -59,6 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Config.cs" />
+    <Compile Include="Common\FileIni.cs" />
+    <Compile Include="Common\ErrorLogger.cs" />
+    <Compile Include="Common\UTF8String.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="ISinavOku.cs" />
     <Compile Include="Logger.cs" />
